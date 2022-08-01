@@ -37,6 +37,7 @@ vim.cmd([[
   au FileType sh set sw=2 ts=2 expandtab
   au FileType terraform set sw=2 softtabstop=2 ts=2
   au FileType lua set sw=2 ts=2 expandtab
+  au FileType toml set sw=2 ts=2 expandtab
   au BufNewFile,BufRead bash setf sh
   au BufNewFile,BufRead sh setf sh
   au BufNewFile,BufRead *.md set ft=mkd tw=80 syntax=markdown
