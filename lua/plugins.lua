@@ -105,4 +105,9 @@ packer.startup(function(use)
 
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
+  use {
+    'sindrets/winshift.nvim',
+    config = requireconfig("winshift"),
+  }
+
 end)
