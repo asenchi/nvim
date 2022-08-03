@@ -56,3 +56,6 @@ map('<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<cr>')
 map('<leader>fh', '<cmd>lua require("telescope.builtin").help_tags()<cr>')
 
 map('<leader>K', ':retab<cr>')
+
+map('<C-W>m', '<Cmd>WinShift<cr>')
+map('<C-W>X', '<Cmd>WinShift swap<cr>')
