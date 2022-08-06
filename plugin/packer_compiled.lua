@@ -149,6 +149,12 @@ _G.packer_plugins = {
     path = "/Users/asenchi/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-surround"] = {
+    config = { 'require("config/nvim-surround")' },
+    loaded = true,
+    path = "/Users/asenchi/.local/share/nvim/site/pack/packer/start/nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
+  },
   ["nvim-tree.lua"] = {
     config = { 'require("config/nvim-tree")' },
     loaded = true,
@@ -226,42 +232,46 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-dap-virtual-text]], true)
 require("config/nvim-dap-virtual-text")
 time([[Config for nvim-dap-virtual-text]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require("config/telescope")
-time([[Config for telescope.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require("config/nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-require("config/lualine")
-time([[Config for lualine.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require("config/nvim-tree")
-time([[Config for nvim-tree.lua]], false)
--- Config for: winshift.nvim
-time([[Config for winshift.nvim]], true)
-require("config/winshift")
-time([[Config for winshift.nvim]], false)
--- Config for: go.nvim
-time([[Config for go.nvim]], true)
-require("config/go")
-time([[Config for go.nvim]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 require("config/nvim-cmp")
 time([[Config for nvim-cmp]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require("config/telescope")
+time([[Config for telescope.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require("config/lualine")
+time([[Config for lualine.nvim]], false)
 -- Config for: nvim-window.git
 time([[Config for nvim-window.git]], true)
 require("config/nvim-window")
 time([[Config for nvim-window.git]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require("config/nvim-tree")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: go.nvim
+time([[Config for go.nvim]], true)
+require("config/go")
+time([[Config for go.nvim]], false)
+-- Config for: winshift.nvim
+time([[Config for winshift.nvim]], true)
+require("config/winshift")
+time([[Config for winshift.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require("config/nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require("config/nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
+-- Config for: nvim-surround
+time([[Config for nvim-surround]], true)
+require("config/nvim-surround")
+time([[Config for nvim-surround]], false)
 if should_profile then save_profiles() end
 
 end)

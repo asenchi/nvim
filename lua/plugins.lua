@@ -110,4 +110,9 @@ packer.startup(function(use)
     config = requireconfig("winshift"),
   }
 
+  use({
+    "kylechui/nvim-surround",
+    config = requireconfig("nvim-surround"),
+  })
+
 end)
