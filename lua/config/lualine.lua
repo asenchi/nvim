@@ -6,6 +6,7 @@ local colors = {
   light_green = '#83a598',
   orange = '#fe8019',
   green = '#8ec07c',
+  blueish = '#3a63a6',
 }
 
 local theme = {
@@ -15,7 +16,7 @@ local theme = {
     c = { fg = colors.black, bg = colors.white },
     z = { fg = colors.white, bg = colors.black },
   },
-  insert = { a = { fg = colors.black, bg = colors.light_green } },
+  insert = { a = { fg = colors.white, bg = colors.blueish } },
   visual = { a = { fg = colors.black, bg = colors.orange } },
   replace = { a = { fg = colors.black, bg = colors.green } },
 }
