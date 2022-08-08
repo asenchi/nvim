@@ -7,6 +7,7 @@ local colors = {
   orange = '#fe8019',
   green = '#8ec07c',
   blueish = '#3a63a6',
+  pink = '#ff0f8b',
 }
 
 local theme = {
@@ -19,6 +20,7 @@ local theme = {
   insert = { a = { fg = colors.white, bg = colors.blueish } },
   visual = { a = { fg = colors.black, bg = colors.orange } },
   replace = { a = { fg = colors.black, bg = colors.green } },
+  terminal = { a = { fg = colors.white, bg = colors.pink } },
 }
 
 local empty = require('lualine.component'):extend()
