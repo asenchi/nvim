@@ -115,4 +115,9 @@ packer.startup(function(use)
     config = requireconfig("nvim-surround"),
   })
 
+  use {
+    "akinsho/toggleterm.nvim", tag = 'v2.*',
+    config = requireconfig("toggleterm"),
+  }
+
 end)

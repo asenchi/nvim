@@ -61,3 +61,4 @@ map('<C-W>m', '<Cmd>WinShift<cr>')
 map('<C-W>X', '<Cmd>WinShift swap<cr>')
 
 map('<leader>1', '<Cmd>terminal<cr>')
+tmap('<Esc>', '<C-\\><C-n><cr>')
