@@ -18,3 +18,17 @@ cd ~/.config
 git clone git@github.com:asenchi/nvim.git
 nvim +PackerSync
 ```
+
+# Screenshots
+
+## Normal
+
+![Normal mode](images/mode-normal.png)
+
+## Insert
+
+![Insert mode](images/mode-insert.png)
+
+## Terminal
+
+![Terminal mode](images/mode-terminal.png)
