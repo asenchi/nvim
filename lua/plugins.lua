@@ -110,10 +110,10 @@ packer.startup(function(use)
     config = requireconfig("winshift"),
   }
 
-  use({
+  use {
     "kylechui/nvim-surround",
     config = requireconfig("nvim-surround"),
-  })
+  }
 
   use {
     "akinsho/toggleterm.nvim", tag = 'v2.*',
@@ -123,6 +123,21 @@ packer.startup(function(use)
   use {
     's1n7ax/nvim-terminal',
     config = requireconfig("nvim-terminal"),
+  }
+
+  use {
+    'jakewvincent/mkdnflow.nvim',
+     config = requireconfig("mkdnflow")
+  }
+
+  use {
+    "Pocco81/true-zen.nvim",
+    config = requireconfig("true-zen")
+  }
+
+  use {
+    "folke/zen-mode.nvim",
+    config = requireconfig("zen-mode"),
   }
 
 end)
