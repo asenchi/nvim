@@ -28,6 +28,8 @@ opt.showbreak= '↪'
 opt.showcmd = true
 opt.spell = true
 
+vim.cmd [[set virtualedit=all]]
+
 -- No longer required to manually wrap paragraphs
 vim.cmd [[set formatoptions+=a]]
 -- double spaces between sentences

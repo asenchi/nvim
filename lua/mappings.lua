@@ -70,3 +70,7 @@ map('<leader>zm', '<Cmd>TZMinimalist<cr>')
 map('<leader>za', '<Cmd>TZAtaraxis<cr>')
 -- Zen Mode
 map('<leader>zz', '<Cmd>ZenMode<cr>')
+
+-- Open preview
+map('<F5>', ':!make open<CR>')
+map('<F6>', ':w<CR>:!!<CR>')

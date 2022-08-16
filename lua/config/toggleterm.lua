@@ -26,4 +26,4 @@ function _htop_toggle()
   htop:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<F6>", "<cmd>lua _htop_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<F7>", "<cmd>lua _htop_toggle()<CR>", {noremap = true, silent = true})
