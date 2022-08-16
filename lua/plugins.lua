@@ -120,4 +120,9 @@ packer.startup(function(use)
     config = requireconfig("toggleterm"),
   }
 
+  use {
+    's1n7ax/nvim-terminal',
+    config = requireconfig("nvim-terminal"),
+  }
+
 end)
