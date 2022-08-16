@@ -27,6 +27,9 @@ opt.termguicolors = true
 opt.showbreak= '↪'
 opt.showcmd = true
 
+-- Buffers aren't destroyed (required for nvim-terminal)
+opt.hidden = true
+
 -- search
 opt.ignorecase = true -- case insensitive searching
 opt.smartcase = true -- case insensitive unless used in search

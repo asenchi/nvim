@@ -34,7 +34,7 @@ map('<leader><space>', ':nohlsearch<CR>')
 -- someday figure this out in lua
 vim.cmd('map <leader>e  :e <C-R>=expand("%:p:h") . "/"<CR>')
 
-map('<leader>t', ':tabnew %<CR>')
+map('<leader>tt', ':tabnew %<CR>')
 map('<leader>tn', ':tabn<cr>')
 map('<leader>tp', ':tabp<cr>')
 map('<leader>tc', '<esc>:tabclose<cr>')
@@ -60,5 +60,5 @@ map('<leader>K', ':retab<cr>')
 map('<C-W>m', '<Cmd>WinShift<cr>')
 map('<C-W>X', '<Cmd>WinShift swap<cr>')
 
-map('<leader>1', '<Cmd>terminal<cr>')
+-- exit the terminal easily
 tmap('<Esc>', '<C-\\><C-n><cr>')
