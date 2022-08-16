@@ -140,4 +140,9 @@ packer.startup(function(use)
     config = requireconfig("zen-mode"),
   }
 
+  use {
+    'chentoast/marks.nvim',
+    config = requireconfig("marks"),
+  }
+
 end)
