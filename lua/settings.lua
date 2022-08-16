@@ -26,6 +26,12 @@ opt.swapfile = false
 opt.termguicolors = true
 opt.showbreak= '↪'
 opt.showcmd = true
+opt.spell = true
+
+-- No longer required to manually wrap paragraphs
+vim.cmd [[set formatoptions+=a]]
+-- double spaces between sentences
+vim.cmd [[set cpoptions+=J]]
 
 -- Buffers aren't destroyed (required for nvim-terminal)
 opt.hidden = true
@@ -57,3 +63,8 @@ vim.cmd([[
       au InsertLeave * set cursorline
   augroup END
 ]])
+
+-- If you have an init.lua
+vim.api.nvim_create_autocmd("FileType", {pattern = "markdown", command = "set awa"})
+-- Use the following if your buffer is set to become hidden
+vim.api.nvim_create_autocmd("BufLeave", {pattern = "*.md", command = "silent! wall"})

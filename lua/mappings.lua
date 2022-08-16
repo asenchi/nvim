@@ -62,3 +62,11 @@ map('<C-W>X', '<Cmd>WinShift swap<cr>')
 
 -- exit the terminal easily
 tmap('<Esc>', '<C-\\><C-n><cr>')
+
+-- True Zen
+map('<leader>zn', '<Cmd>TZNarrow<cr>')
+map('<leader>zf', '<Cmd>TZFocus<cr>')
+map('<leader>zm', '<Cmd>TZMinimalist<cr>')
+map('<leader>za', '<Cmd>TZAtaraxis<cr>')
+-- Zen Mode
+map('<leader>zz', '<Cmd>ZenMode<cr>')
