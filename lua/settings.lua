@@ -48,7 +48,6 @@ vim.cmd([[
   au BufNewFile,BufRead *.md set ft=mkd syntax=markdown
   au BufNewFile,BufRead *.markdown set ft=mkd syntax=markdown
   au BUfNewFile,BufRead *.ex,*.exs set ft=elixir syntax=elixir
-  au BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=elixir
   au BufRead,BufNewFile mix.lock set filetype=elixir
   au BufWritePre *.go :silent! lua require('go.format').gofmt()
 ]])
