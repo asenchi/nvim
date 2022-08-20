@@ -27,13 +27,7 @@ opt.termguicolors = true
 opt.showbreak= '↪'
 opt.showcmd = true
 opt.spell = true
-
-vim.cmd [[set virtualedit=all]]
-
--- No longer required to manually wrap paragraphs
-vim.cmd [[set formatoptions+=a]]
--- double spaces between sentences
-vim.cmd [[set cpoptions+=J]]
+opt.syntax = true
 
 -- Buffers aren't destroyed (required for nvim-terminal)
 opt.hidden = true
@@ -43,16 +37,17 @@ opt.ignorecase = true -- case insensitive searching
 opt.smartcase = true -- case insensitive unless used in search
 
 vim.cmd([[
-  au FileType go set sw=4 ts=4 expandtab
-  au FileType elixir setlocal formatprg=mix\ format\ -
-  au FileType sh set sw=2 ts=2 expandtab
-  au FileType terraform set sw=2 softtabstop=2 ts=2
-  au FileType lua set sw=2 ts=2 expandtab
-  au FileType toml set sw=2 ts=2 expandtab
+  au FileType go setl sw=4 ts=4 et
+  au FileType elixir setl sw=2 sts=2 et
+  au FileType sh setl sw=2 ts=2 et
+  au FileType terraform setl sw=2 sts=2 ts=2
+  au FileType lua setl sw=2 ts=2 et
+  au FileType toml setl sw=2 ts=2 et
   au BufNewFile,BufRead bash setf sh
   au BufNewFile,BufRead sh setf sh
-  au BufNewFile,BufRead *.md set ft=mkd tw=80 syntax=markdown
-  au BufNewFile,BufRead *.markdown set ft=mkd tw=80 syntax=markdown
+  au BufNewFile,BufRead *.md set ft=mkd syntax=markdown
+  au BufNewFile,BufRead *.markdown set ft=mkd syntax=markdown
+  au BUfNewFile,BufRead *.ex,*.exs set ft=elixir syntax=elixir
   au BufWritePre *.go :silent! lua require('go.format').gofmt()
 ]])
 
