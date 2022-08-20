@@ -28,13 +28,6 @@ opt.showbreak= '↪'
 opt.showcmd = true
 opt.spell = true
 
-vim.cmd [[set virtualedit=all]]
-
--- No longer required to manually wrap paragraphs
-vim.cmd [[set formatoptions+=a]]
--- double spaces between sentences
-vim.cmd [[set cpoptions+=J]]
-
 -- Buffers aren't destroyed (required for nvim-terminal)
 opt.hidden = true
 
@@ -53,6 +46,8 @@ vim.cmd([[
   au BufNewFile,BufRead sh setf sh
   au BufNewFile,BufRead *.md set ft=mkd tw=80 syntax=markdown
   au BufNewFile,BufRead *.markdown set ft=mkd tw=80 syntax=markdown
+  au BUfNewFile,BufRead *.ex set ft=elixir tw=80 syntax=elixir
+  au BUfNewFile,BufRead *.exs set ft=elixir tw=80 syntax=elixir
   au BufWritePre *.go :silent! lua require('go.format').gofmt()
 ]])
 

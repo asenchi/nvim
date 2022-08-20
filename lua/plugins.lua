@@ -145,4 +145,10 @@ packer.startup(function(use)
     config = requireconfig("marks"),
   }
 
+  use {
+    'mhanberg/elixir.nvim',
+    requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" },
+    config = requireconfig("elixir")
+  }
+
 end)
