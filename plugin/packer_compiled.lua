@@ -270,78 +270,78 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: zen-mode.nvim
-time([[Config for zen-mode.nvim]], true)
-require("config/zen-mode")
-time([[Config for zen-mode.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require("config/nvim-cmp")
-time([[Config for nvim-cmp]], false)
--- Config for: nvim-window.git
-time([[Config for nvim-window.git]], true)
-require("config/nvim-window")
-time([[Config for nvim-window.git]], false)
--- Config for: nvim-dap-virtual-text
-time([[Config for nvim-dap-virtual-text]], true)
-require("config/nvim-dap-virtual-text")
-time([[Config for nvim-dap-virtual-text]], false)
--- Config for: go.nvim
-time([[Config for go.nvim]], true)
-require("config/go")
-time([[Config for go.nvim]], false)
--- Config for: nvim-surround
-time([[Config for nvim-surround]], true)
-require("config/nvim-surround")
-time([[Config for nvim-surround]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require("config/telescope")
-time([[Config for telescope.nvim]], false)
--- Config for: nvim-terminal
-time([[Config for nvim-terminal]], true)
-require("config/nvim-terminal")
-time([[Config for nvim-terminal]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-require("config/toggleterm")
-time([[Config for toggleterm.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require("config/nvim-tree")
-time([[Config for nvim-tree.lua]], false)
--- Config for: true-zen.nvim
-time([[Config for true-zen.nvim]], true)
-require("config/true-zen")
-time([[Config for true-zen.nvim]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 require("config/lualine")
 time([[Config for lualine.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require("config/nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
+-- Config for: nvim-dap-virtual-text
+time([[Config for nvim-dap-virtual-text]], true)
+require("config/nvim-dap-virtual-text")
+time([[Config for nvim-dap-virtual-text]], false)
 -- Config for: marks.nvim
 time([[Config for marks.nvim]], true)
 require("config/marks")
 time([[Config for marks.nvim]], false)
--- Config for: elixir.nvim
-time([[Config for elixir.nvim]], true)
-require("config/elixir")
-time([[Config for elixir.nvim]], false)
--- Config for: winshift.nvim
-time([[Config for winshift.nvim]], true)
-require("config/winshift")
-time([[Config for winshift.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require("config/nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
 -- Config for: mkdnflow.nvim
 time([[Config for mkdnflow.nvim]], true)
 require("config/mkdnflow")
 time([[Config for mkdnflow.nvim]], false)
+-- Config for: nvim-surround
+time([[Config for nvim-surround]], true)
+require("config/nvim-surround")
+time([[Config for nvim-surround]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require("config/nvim-cmp")
+time([[Config for nvim-cmp]], false)
+-- Config for: nvim-terminal
+time([[Config for nvim-terminal]], true)
+require("config/nvim-terminal")
+time([[Config for nvim-terminal]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require("config/nvim-tree")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+require("config/toggleterm")
+time([[Config for toggleterm.nvim]], false)
+-- Config for: elixir.nvim
+time([[Config for elixir.nvim]], true)
+require("config/elixir")
+time([[Config for elixir.nvim]], false)
+-- Config for: true-zen.nvim
+time([[Config for true-zen.nvim]], true)
+require("config/true-zen")
+time([[Config for true-zen.nvim]], false)
+-- Config for: go.nvim
+time([[Config for go.nvim]], true)
+require("config/go")
+time([[Config for go.nvim]], false)
+-- Config for: zen-mode.nvim
+time([[Config for zen-mode.nvim]], true)
+require("config/zen-mode")
+time([[Config for zen-mode.nvim]], false)
+-- Config for: winshift.nvim
+time([[Config for winshift.nvim]], true)
+require("config/winshift")
+time([[Config for winshift.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require("config/telescope")
+time([[Config for telescope.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require("config/nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-window.git
+time([[Config for nvim-window.git]], true)
+require("config/nvim-window")
+time([[Config for nvim-window.git]], false)
 if should_profile then save_profiles() end
 
 end)

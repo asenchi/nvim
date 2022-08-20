@@ -28,8 +28,5 @@ elixir.setup({
     -- keybinds for vim-vsnip: https://github.com/hrsh7th/vim-vsnip
     vim.cmd([[imap <expr> <C-l> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
     vim.cmd([[smap <expr> <C-l> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
-
-    -- update capabilities for nvim-cmp: https://github.com/hrsh7th/nvim-cmp
-    require("cmp_nvim_lsp").update_capabilities(capabilities)
   end
 })

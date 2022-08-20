@@ -32,8 +32,8 @@ require('lspconfig').elixirls.setup {
   capabilities = capabilities,
   settings = {
     elixirLS = {
-      dialyzerEnabled = false,
-      fetchDeps = false,
+      dialyzerEnabled = true,
+      fetchDeps = true,
     }
   }
 }
