@@ -26,51 +26,64 @@ function tmap(shortcut, command)
   keymap('t', shortcut, command)
 end
 
-map("<leader>c", ":nohlsearch<cr>")
+-- Stop recording... I really hate getting stuck in this
+nmap('q', '<Nop>')
+
+-- Clear search results
+map("<leader><space>", ":nohlsearch<CR>")
 nmap("n", "nzzzv")
 nmap("N", "Nzzzv")
-map('<leader><space>', ':nohlsearch<CR>')
 
 -- someday figure this out in lua
 vim.cmd('map <leader>e  :e <C-R>=expand("%:p:h") . "/"<CR>')
 
+-- tabs
 map('<leader>tt', ':tabnew %<CR>')
-map('<leader>tn', ':tabn<cr>')
-map('<leader>tp', ':tabp<cr>')
-map('<leader>tc', '<esc>:tabclose<cr>')
+map('<leader>tc', '<Esc>:tabclose<CR>')
+map(']t', ':tabn<CR>')
+map('[t', ':tabp<CR>')
 
-map('<leader>V', ':vsplit<cr>')
-map('<leader>H', ':split<cr>')
-map('<leader>q', ':close<cr>')
+-- buffers
+nmap('[b', ':bprevious<CR>')
+nmap(']b', ':bnext<CR>')
+nmap('[B', ':bfirst<CR>')
+nmap(']B', ':blast<CR>')
 
+map('<leader>V', ':vsplit<CR>')
+map('<leader>H', ':split<CR>')
+map('<leader>q', ':close<CR>')
+
+-- Move to a window
 map('<leader>w', ':lua require("nvim-window").pick()<CR>')
+-- Move a window
+map('<leader>m', ':WinShift<CR>')
+-- Swap windows
+map('<leader>S', ':WinShift swap<CR>')
 
 map('<leader>l', ':IndentLinesToggle<CR>')
 
 map('<leader>b', ':NvimTreeToggle<CR>')
 map('<C-b>', ':NvimTreeToggle<CR>')
 
-map('<leader>ff', '<cmd>lua require("telescope.builtin").find_files()<cr>')
-map('<leader>fg', '<cmd>lua require("telescope.builtin").live_grep()<cr>')
-map('<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<cr>')
-map('<leader>fh', '<cmd>lua require("telescope.builtin").help_tags()<cr>')
+-- telescope
+map('<leader>ff', ':lua require("telescope.builtin").find_files()<CR>')
+map('<leader>fg', ':lua require("telescope.builtin").live_grep()<CR>')
+map('<leader>fb', ':lua require("telescope.builtin").buffers()<CR>')
+map('<leader>fh', ':lua require("telescope.builtin").help_tags()<CR>')
 
-map('<leader>K', ':retab<cr>')
-
-map('<C-W>m', '<Cmd>WinShift<cr>')
-map('<C-W>X', '<Cmd>WinShift swap<cr>')
+map('<leader>K', ':retab<CR>')
 
 -- exit the terminal easily
-tmap('<Esc>', '<C-\\><C-n><cr>')
+tmap('<Esc>', '<C-\\><C-n><CR>')
 
 -- True Zen
-map('<leader>zn', '<Cmd>TZNarrow<cr>')
-map('<leader>zf', '<Cmd>TZFocus<cr>')
-map('<leader>zm', '<Cmd>TZMinimalist<cr>')
-map('<leader>za', '<Cmd>TZAtaraxis<cr>')
+map('<leader>zf', ':TZFocus<CR>')
+map('<leader>zm', ':TZMinimalist<CR>')
+map('<leader>za', ':TZAtaraxis<CR>')
 -- Zen Mode
-map('<leader>zz', '<Cmd>ZenMode<cr>')
+map('<leader>zz', ':ZenMode<CR>')
 
 -- Open preview
 map('<F5>', ':!make open<CR>')
+-- Run previous command
 map('<F6>', ':w<CR>:!!<CR>')
