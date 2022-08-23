@@ -14,7 +14,6 @@ opt.autoindent = true
 opt.copyindent = true
 opt.autowrite = true -- write when switching buffers
 opt.autowriteall = true -- write on :quit
-opt.colorcolumn = 81 -- highlight the 81st column as an indicator of width
 opt.number = true
 opt.numberwidth = 4
 opt.formatoptions = 'tcpronj'
@@ -43,10 +42,11 @@ vim.cmd([[
   au FileType terraform setl sw=2 sts=2 ts=2
   au FileType lua setl sw=2 ts=2 et
   au FileType toml setl sw=2 ts=2 et
+  au FileType markdown setl tw=79
   au BufNewFile,BufRead bash setf sh
   au BufNewFile,BufRead sh setf sh
-  au BufNewFile,BufRead *.md set ft=mkd syntax=markdown
-  au BufNewFile,BufRead *.markdown set ft=mkd syntax=markdown
+  au BufNewFile,BufRead *.md set ft=markdown syntax=markdown
+  au BufNewFile,BufRead *.markdown set ft=markdown syntax=markdown
   au BUfNewFile,BufRead *.ex,*.exs set ft=elixir syntax=elixir
   au BufRead,BufNewFile mix.lock set filetype=elixir
   au BufWritePre *.go :silent! lua require('go.format').gofmt()
@@ -59,6 +59,15 @@ vim.cmd([[
       au WinEnter * set cursorline
       au InsertEnter * set nocursorline
       au InsertLeave * set cursorline
+  augroup END
+]])
+
+vim.cmd([[
+  hi ColorColumn guibg=#ABB2BF
+  augroup colorcol
+    au!
+    au InsertEnter * setlocal colorcolumn=80
+    au InsertLeave * setlocal colorcolumn=0
   augroup END
 ]])
 

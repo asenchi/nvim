@@ -126,11 +126,6 @@ packer.startup(function(use)
   }
 
   use {
-    'jakewvincent/mkdnflow.nvim',
-     config = requireconfig("mkdnflow")
-  }
-
-  use {
     "Pocco81/true-zen.nvim",
     config = requireconfig("true-zen")
   }
