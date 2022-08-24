@@ -116,13 +116,8 @@ packer.startup(function(use)
   }
 
   use {
-    "akinsho/toggleterm.nvim", tag = 'v2.*',
-    config = requireconfig("toggleterm"),
-  }
-
-  use {
-    's1n7ax/nvim-terminal',
-    config = requireconfig("nvim-terminal"),
+    "numToStr/FTerm.nvim",
+    config = requireconfig("fterm")
   }
 
   use {
