@@ -87,3 +87,5 @@ map('<leader>zz', ':ZenMode<CR>')
 map('<F5>', ':!make open<CR>')
 -- Run previous command
 map('<F6>', ':w<CR>:!!<CR>')
+
+map('<leader>$', ':luafile $MYVIMRC')

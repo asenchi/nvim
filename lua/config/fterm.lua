@@ -32,6 +32,16 @@ vim.keymap.set('n', '<F11>', function()
   psql:toggle()
 end)
 
+-- brew update && brew upgrade && brew cleanup
+local brew = fterm:new({
+  ft = 'fterm_brew',
+  cmd = "brew update && brew upgrade && brew cleanup"
+})
+
+vim.keymap.set('n', '<F10>', function()
+  brew:toggle()
+end)
+
 -- Disable for the time being
 -- require("toggleterm").setup{}
 -- 
