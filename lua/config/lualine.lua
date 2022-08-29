@@ -13,12 +13,22 @@ local colors = {
 local theme = {
   normal = {
     a = { fg = colors.white, bg = colors.black },
-    b = { fg = colors.white, bg = colors.grey },
+    b = { fg = colors.black, bg = colors.grey },
     c = { fg = colors.black, bg = colors.white },
+    x = { fg = colors.black, bg = colors.orange },
+    y = { fg = colors.white, bg = colors.black },
     z = { fg = colors.white, bg = colors.black },
   },
-  insert = { a = { fg = colors.white, bg = colors.blueish } },
-  visual = { a = { fg = colors.black, bg = colors.orange } },
+  insert = {
+    a = { fg = colors.white, bg = colors.blueish },
+    b = { fg = colors.black, bg = colors.grey },
+    y = { fg = colors.white, bg = colors.grey },
+  },
+  visual = {
+    a = { fg = colors.black, bg = colors.orange },
+    x = { fg = colors.white, bg = colors.pink },
+    y = { fg = colors.white, bg = colors.grey },
+  },
   replace = { a = { fg = colors.black, bg = colors.green } },
   terminal = { a = { fg = colors.white, bg = colors.pink } },
 }
@@ -58,8 +68,8 @@ local function search_result()
   if not last_search or last_search == '' then
     return ''
   end
-  local searchcount = vim.fn.searchcount { maxcount = 9999 }
-  return last_search .. '(' .. searchcount.current .. '/' .. searchcount.total .. ')'
+  local searchcount = vim.fn.searchcount { maxcount = 999 }
+  return last_search .. '(' .. searchcount.current .. ':' .. searchcount.total .. ')'
 end
 
 local function modified()
@@ -78,10 +88,13 @@ require('lualine').setup {
     section_separators = { left = '', right = '' },
   },
   sections = process_sections {
-    lualine_a = { 'mode' },
+    lualine_a = {
+      'mode',
+    },
     lualine_b = {
       'branch',
-      'diff',
+    },
+    lualine_c = {
       {
         'diagnostics',
         source = { 'nvim' },
@@ -94,7 +107,11 @@ require('lualine').setup {
         sections = { 'warn' },
         diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
       },
-      { 'filename', file_status = false, path = 1 },
+      {
+        'filename',
+        file_status = false,
+        path = 0
+      },
       { modified, color = { bg = colors.red } },
       {
         '%w',
@@ -115,13 +132,12 @@ require('lualine').setup {
         end,
       },
     },
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = { search_result, 'filetype' },
+    lualine_x = { search_result },
+    lualine_y = {
+      'diff',
+      'filetype'
+    },
     lualine_z = { '%l:%c', '%p%%/%L' },
   },
-  inactive_sections = {
-    lualine_c = { '%f %y %m' },
-    lualine_x = {},
-  },
+  inactive_sections = {},
 }

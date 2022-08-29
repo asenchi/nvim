@@ -26,9 +26,6 @@ function tmap(shortcut, command)
   keymap('t', shortcut, command)
 end
 
--- Stop recording... I really hate getting stuck in this
-nmap('q', '<Nop>')
-
 -- Clear search results
 map("<leader><space>", ":nohlsearch<CR>")
 nmap("n", "nzzzv")
