@@ -141,4 +141,6 @@ packer.startup(function(use)
     config = requireconfig("elixir")
   }
 
+  use { "tpope/vim-fugitive", event = "User InGitRepo", config = [[require('config.fugitive')]] }
+
 end)
