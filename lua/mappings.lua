@@ -77,13 +77,14 @@ map('<F6>', ':w<CR>:!!<CR>')
 
 map('<leader>$', ':luafile $MYVIMRC')
 
-map('<leader>V', ':vsplit<CR>')
-map('<leader>H', ':split<CR>')
+map('<leader>v', ':vsplit<CR>')
+map('<leader>s', ':split<CR>')
 -- Move to a window
 map('<leader>w', ':lua require("nvim-window").pick()<CR>')
 -- Move a window
 map('<leader>m', ':WinShift<CR>')
 -- Swap windows
 map('<leader>S', ':WinShift swap<CR>')
--- Windows plugin
+-- Auto-size windows
 map('<leader>a', ':WindowsToggleAutowidth<CR>')
+map('<leader>z', ':WindowsMaximaze<CR>')
