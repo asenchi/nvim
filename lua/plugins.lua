@@ -143,4 +143,17 @@ packer.startup(function(use)
 
   use { "tpope/vim-fugitive", event = "User InGitRepo", config = [[require('config.fugitive')]] }
 
+  use { "anuvyklack/windows.nvim",
+    requires = {
+       "anuvyklack/middleclass",
+       "anuvyklack/animation.nvim"
+    },
+    config = function()
+       vim.o.winwidth = 10
+       vim.o.winminwidth = 10
+       vim.o.equalalways = false
+       require('windows').setup()
+    end
+  }
+
 end)
