@@ -30,6 +30,7 @@ end
 map("<leader><space>", ":nohlsearch<CR>")
 nmap("n", "nzzzv")
 nmap("N", "Nzzzv")
+map('<leader>q', ':close<CR>')
 
 -- someday figure this out in lua
 vim.cmd('map <leader>e  :e <C-R>=expand("%:p:h") . "/"<CR>')
@@ -45,17 +46,6 @@ nmap('[b', ':bprevious<CR>')
 nmap(']b', ':bnext<CR>')
 nmap('[B', ':bfirst<CR>')
 nmap(']B', ':blast<CR>')
-
-map('<leader>V', ':vsplit<CR>')
-map('<leader>H', ':split<CR>')
-map('<leader>q', ':close<CR>')
-
--- Move to a window
-map('<leader>w', ':lua require("nvim-window").pick()<CR>')
--- Move a window
-map('<leader>m', ':WinShift<CR>')
--- Swap windows
-map('<leader>S', ':WinShift swap<CR>')
 
 map('<leader>l', ':IndentLinesToggle<CR>')
 
@@ -86,3 +76,14 @@ map('<F5>', ':!make open<CR>')
 map('<F6>', ':w<CR>:!!<CR>')
 
 map('<leader>$', ':luafile $MYVIMRC')
+
+map('<leader>V', ':vsplit<CR>')
+map('<leader>H', ':split<CR>')
+-- Move to a window
+map('<leader>w', ':lua require("nvim-window").pick()<CR>')
+-- Move a window
+map('<leader>m', ':WinShift<CR>')
+-- Swap windows
+map('<leader>S', ':WinShift swap<CR>')
+-- Windows plugin
+map('<leader>a', ':WindowsToggleAutowidth<CR>')
