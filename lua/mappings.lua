@@ -38,18 +38,19 @@ vim.cmd('map <leader>e  :e <C-R>=expand("%:p:h") . "/"<CR>')
 -- tabs
 map('<leader>tt', ':tabnew %<CR>')
 map('<leader>tc', '<Esc>:tabclose<CR>')
-map(']t', ':tabn<CR>')
-map('[t', ':tabp<CR>')
+map('<leader>tn', ':tabn<CR>')
+map('<leader>tp', ':tabp<CR>')
 
 -- buffers
-nmap('[b', ':bprevious<CR>')
-nmap(']b', ':bnext<CR>')
-nmap('[B', ':bfirst<CR>')
-nmap(']B', ':blast<CR>')
+map('<leader>fb', ':lua require("telescope.builtin").buffers()<CR>')
+nmap('<leader>bn', ':bnext<CR>')
+nmap('<leader>bp', ':bprevious<CR>')
+nmap('<leader>bf', ':bfirst<CR>')
+nmap('<leader>bl', ':blast<CR>')
 
 map('<leader>l', ':IndentLinesToggle<CR>')
 
-map('<leader>b', ':NvimTreeToggle<CR>')
+map('<leader>p', ':NvimTreeToggle<CR>')
 map('<C-b>', ':NvimTreeToggle<CR>')
 
 -- telescope
@@ -77,14 +78,14 @@ map('<F6>', ':w<CR>:!!<CR>')
 
 map('<leader>$', ':luafile $MYVIMRC')
 
-map('<leader>v', ':vsplit<CR>')
-map('<leader>s', ':split<CR>')
 -- Move to a window
-map('<leader>w', ':lua require("nvim-window").pick()<CR>')
+map('<leader>wp', ':lua require("nvim-window").pick()<CR>')
+map('<leader>wv', ':vsplit<CR>')
+map('<leader>ws', ':split<CR>')
 -- Move a window
-map('<leader>m', ':WinShift<CR>')
+map('<leader>wm', ':WinShift<CR>')
 -- Swap windows
-map('<leader>S', ':WinShift swap<CR>')
+map('<leader>wS', ':WinShift swap<CR>')
 -- Auto-size windows
-map('<leader>a', ':WindowsToggleAutowidth<CR>')
-map('<leader>z', ':WindowsMaximaze<CR>')
+map('<leader>wa', ':WindowsToggleAutowidth<CR>')
+map('<leader>wz', ':WindowsMaximaze<CR>')
