@@ -43,8 +43,12 @@ vim.cmd([[
   au FileType lua setl sw=2 ts=2 et
   au FileType toml setl sw=2 ts=2 et
   au FileType markdown setl tw=79
+  au FileType css setl sw=2 ts=2 et
+  au FileType html setl sw=2 ts=2 et
   au BufNewFile,BufRead bash setf sh
   au BufNewFile,BufRead sh setf sh
+  au BufNewFile,BufRead css setf css
+  au BufNewFile,BufRead html setf html
   au BufNewFile,BufRead *.md set ft=markdown syntax=markdown
   au BufNewFile,BufRead *.markdown set ft=markdown syntax=markdown
   au BUfNewFile,BufRead *.ex,*.exs set ft=elixir syntax=elixir

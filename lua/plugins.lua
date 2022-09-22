@@ -151,4 +151,9 @@ packer.startup(function(use)
     config = requireconfig("windows")
   }
 
+  use {
+    "NvChad/nvim-colorizer.lua",
+    config = requireconfig("nvim-colorizer")
+  }
+
 end)
