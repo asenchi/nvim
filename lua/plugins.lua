@@ -156,4 +156,8 @@ packer.startup(function(use)
     config = requireconfig("nvim-colorizer")
   }
 
+  use {
+    "habamax/vim-asciidoctor"
+  }
+
 end)
