@@ -72,7 +72,7 @@ map('<leader>za', ':TZAtaraxis<CR>')
 map('<leader>zz', ':ZenMode<CR>')
 
 -- Open preview
-map('<F5>', ':!make open<CR>')
+map('<F5>', ':!make<CR>')
 -- Run previous command
 map('<F6>', ':w<CR>:!!<CR>')
 
@@ -90,4 +90,4 @@ map('<leader>wS', ':WinShift swap<CR>')
 map('<leader>wa', ':WindowsToggleAutowidth<CR>')
 map('<leader>wz', ':WindowsMaximaze<CR>')
 
-map('<leader>g', ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
+map('<leader>g', ':lua vim.diagnostic.open_float(0)<CR>')
