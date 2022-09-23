@@ -89,3 +89,5 @@ map('<leader>wS', ':WinShift swap<CR>')
 -- Auto-size windows
 map('<leader>wa', ':WindowsToggleAutowidth<CR>')
 map('<leader>wz', ':WindowsMaximaze<CR>')
+
+map('<leader>g', ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
