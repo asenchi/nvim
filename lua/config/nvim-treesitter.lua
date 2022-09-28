@@ -22,6 +22,10 @@ require('nvim-treesitter.configs').setup {
     "yaml",
   },
 
+  highlight_definitions = {
+    enable = true,
+  },
+
   ignore_install = { "javascript" },
 
   highlight = {

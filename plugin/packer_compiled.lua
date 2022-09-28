@@ -303,10 +303,6 @@ time([[Defining packer_plugins]], false)
 time([[Config for elixir.nvim]], true)
 require("config/elixir")
 time([[Config for elixir.nvim]], false)
--- Config for: winshift.nvim
-time([[Config for winshift.nvim]], true)
-require("config/winshift")
-time([[Config for winshift.nvim]], false)
 -- Config for: go.nvim
 time([[Config for go.nvim]], true)
 require("config/go")
@@ -339,14 +335,14 @@ time([[Config for lualine.nvim]], false)
 time([[Config for nvim-treesitter]], true)
 require("config/nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require("config/telescope")
-time([[Config for telescope.nvim]], false)
 -- Config for: marks.nvim
 time([[Config for marks.nvim]], true)
 require("config/marks")
 time([[Config for marks.nvim]], false)
+-- Config for: nvim-window.git
+time([[Config for nvim-window.git]], true)
+require("config/nvim-window")
+time([[Config for nvim-window.git]], false)
 -- Config for: true-zen.nvim
 time([[Config for true-zen.nvim]], true)
 require("config/true-zen")
@@ -355,6 +351,14 @@ time([[Config for true-zen.nvim]], false)
 time([[Config for nvim-cmp]], true)
 require("config/nvim-cmp")
 time([[Config for nvim-cmp]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require("config/telescope")
+time([[Config for telescope.nvim]], false)
+-- Config for: windows.nvim
+time([[Config for windows.nvim]], true)
+require("config/windows")
+time([[Config for windows.nvim]], false)
 -- Config for: nvim-colorizer.lua
 time([[Config for nvim-colorizer.lua]], true)
 require("config/nvim-colorizer")
@@ -363,14 +367,10 @@ time([[Config for nvim-colorizer.lua]], false)
 time([[Config for zen-mode.nvim]], true)
 require("config/zen-mode")
 time([[Config for zen-mode.nvim]], false)
--- Config for: windows.nvim
-time([[Config for windows.nvim]], true)
-require("config/windows")
-time([[Config for windows.nvim]], false)
--- Config for: nvim-window.git
-time([[Config for nvim-window.git]], true)
-require("config/nvim-window")
-time([[Config for nvim-window.git]], false)
+-- Config for: winshift.nvim
+time([[Config for winshift.nvim]], true)
+require("config/winshift")
+time([[Config for winshift.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
