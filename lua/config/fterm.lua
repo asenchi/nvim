@@ -48,8 +48,8 @@ local phx = fterm:new({
   cmd = "mix phx.server"
 })
 
-vim.keymap.set('n', '<F10>', function()
-  brew:toggle()
+vim.keymap.set('n', '<F9>', function()
+  phx:toggle()
 end)
 
 -- Disable for the time being
