@@ -75,19 +75,19 @@ map('<leader>zz', ':ZenMode<CR>')
 map('<F5>', ':!make<CR>')
 -- Run previous command
 map('<F6>', ':w<CR>:!!<CR>')
+-- Get popup window of diagnostic on current line
+map('<F7>', ':lua vim.diagnostic.open_float(0)<CR>')
 
 map('<leader>$', ':luafile $MYVIMRC')
 
 -- Move to a window
-map('<leader>wp', ':lua require("nvim-window").pick()<CR>')
-map('<leader>wv', ':vsplit<CR>')
-map('<leader>ws', ':split<CR>')
+map('<leader>p', ':lua require("nvim-window").pick()<CR>')
+map('<leader>v', ':vsplit<CR>')
+map('<leader>s', ':split<CR>')
 -- Move a window
 map('<leader>wm', ':WinShift<CR>')
 -- Swap windows
 map('<leader>wS', ':WinShift swap<CR>')
 -- Auto-size windows
 map('<leader>wa', ':WindowsToggleAutowidth<CR>')
-map('<leader>wz', ':WindowsMaximaze<CR>')
-
-map('<leader>g', ':lua vim.diagnostic.open_float(0)<CR>')
+map('<leader>wz', ':WindowsMaximize<CR>')

@@ -42,6 +42,16 @@ vim.keymap.set('n', '<F10>', function()
   brew:toggle()
 end)
 
+-- brew update && brew upgrade && brew cleanup
+local phx = fterm:new({
+  ft = 'fterm_phx',
+  cmd = "mix phx.server"
+})
+
+vim.keymap.set('n', '<F10>', function()
+  brew:toggle()
+end)
+
 -- Disable for the time being
 -- require("toggleterm").setup{}
 -- 

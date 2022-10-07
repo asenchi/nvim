@@ -299,18 +299,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: marks.nvim
-time([[Config for marks.nvim]], true)
-require("config/marks")
-time([[Config for marks.nvim]], false)
--- Config for: winshift.nvim
-time([[Config for winshift.nvim]], true)
-require("config/winshift")
-time([[Config for winshift.nvim]], false)
--- Config for: zen-mode.nvim
-time([[Config for zen-mode.nvim]], true)
-require("config/zen-mode")
-time([[Config for zen-mode.nvim]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 require("config/nvim-cmp")
@@ -323,10 +311,10 @@ time([[Config for nvim-colorizer.lua]], false)
 time([[Config for nvim-window.git]], true)
 require("config/nvim-window")
 time([[Config for nvim-window.git]], false)
--- Config for: elixir.nvim
-time([[Config for elixir.nvim]], true)
-require("config/elixir")
-time([[Config for elixir.nvim]], false)
+-- Config for: winshift.nvim
+time([[Config for winshift.nvim]], true)
+require("config/winshift")
+time([[Config for winshift.nvim]], false)
 -- Config for: go.nvim
 time([[Config for go.nvim]], true)
 require("config/go")
@@ -347,22 +335,34 @@ time([[Config for telescope.nvim]], false)
 time([[Config for FTerm.nvim]], true)
 require("config/fterm")
 time([[Config for FTerm.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require("config/nvim-treesitter")
-time([[Config for nvim-treesitter]], false)
 -- Config for: true-zen.nvim
 time([[Config for true-zen.nvim]], true)
 require("config/true-zen")
 time([[Config for true-zen.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require("config/nvim-tree")
-time([[Config for nvim-tree.lua]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 require("config/lualine")
 time([[Config for lualine.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require("config/nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: elixir.nvim
+time([[Config for elixir.nvim]], true)
+require("config/elixir")
+time([[Config for elixir.nvim]], false)
+-- Config for: marks.nvim
+time([[Config for marks.nvim]], true)
+require("config/marks")
+time([[Config for marks.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require("config/nvim-tree")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: zen-mode.nvim
+time([[Config for zen-mode.nvim]], true)
+require("config/zen-mode")
+time([[Config for zen-mode.nvim]], false)
 -- Config for: windows.nvim
 time([[Config for windows.nvim]], true)
 require("config/windows")
