@@ -70,7 +70,10 @@ packer.startup(function(use)
     run = ":TSUpdate",
   }
 
-  use { 'Yggdroot/indentLine' }
+  -- use {
+  --   'Yggdroot/indentLine',
+  --   config = requireconfig("indentline"),
+  -- }
 
   use {
     'kyazdani42/nvim-tree.lua',
@@ -85,7 +88,6 @@ packer.startup(function(use)
     "rcarriga/nvim-dap-ui",
     requires = {"mfussenegger/nvim-dap"}
   }
-  
 
   use {
     'theHamsta/nvim-dap-virtual-text',
@@ -158,6 +160,11 @@ packer.startup(function(use)
 
   use {
     "habamax/vim-asciidoctor"
+  }
+
+  use {
+    "hashivim/vim-terraform",
+    config = requireconfig("vim-terraform")
   }
 
 end)

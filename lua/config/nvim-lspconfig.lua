@@ -37,3 +37,6 @@ require('lspconfig').elixirls.setup {
     }
   }
 }
+
+lspconfig.terraformls.setup{}
+lspconfig.tflint.setup{}
