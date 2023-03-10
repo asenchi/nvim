@@ -58,7 +58,7 @@ vim.cmd([[
   silent! autocmd! filetypedetect BufRead,BufNewFile *.tf
   au BufNewFile,BufRead *.hcl set filetype=hcl
   au BufNewFile,BufRead *.terraformrc,terraform.rc set filetype=hcl
-  au BufNewFile,BufRead *.tf,*.tfvars *.tfbackend set filetype=terraform
+  au BufNewFile,BufRead *.tf,*.tfvars,*.tfbackend set filetype=terraform
   au BufNewFile,BufRead *.tfstate,*.tfstate.backup set filetype=json
 
   au BufNewFile,BufRead json set ft=json conceallevel=0
