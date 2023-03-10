@@ -300,34 +300,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require("config/nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
--- Config for: nvim-surround
-time([[Config for nvim-surround]], true)
-require("config/nvim-surround")
-time([[Config for nvim-surround]], false)
--- Config for: true-zen.nvim
-time([[Config for true-zen.nvim]], true)
-require("config/true-zen")
-time([[Config for true-zen.nvim]], false)
--- Config for: FTerm.nvim
-time([[Config for FTerm.nvim]], true)
-require("config/fterm")
-time([[Config for FTerm.nvim]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-require("config/lualine")
-time([[Config for lualine.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require("config/nvim-treesitter")
-time([[Config for nvim-treesitter]], false)
--- Config for: marks.nvim
-time([[Config for marks.nvim]], true)
-require("config/marks")
-time([[Config for marks.nvim]], false)
 -- Config for: vim-terraform
 time([[Config for vim-terraform]], true)
 require("config/vim-terraform")
@@ -344,10 +316,6 @@ time([[Config for nvim-colorizer.lua]], false)
 time([[Config for windows.nvim]], true)
 require("config/windows")
 time([[Config for windows.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require("config/nvim-tree")
-time([[Config for nvim-tree.lua]], false)
 -- Config for: winshift.nvim
 time([[Config for winshift.nvim]], true)
 require("config/winshift")
@@ -356,26 +324,58 @@ time([[Config for winshift.nvim]], false)
 time([[Config for zen-mode.nvim]], true)
 require("config/zen-mode")
 time([[Config for zen-mode.nvim]], false)
--- Config for: nvim-window.git
-time([[Config for nvim-window.git]], true)
-require("config/nvim-window")
-time([[Config for nvim-window.git]], false)
--- Config for: elixir.nvim
-time([[Config for elixir.nvim]], true)
-require("config/elixir")
-time([[Config for elixir.nvim]], false)
 -- Config for: nvim-dap-virtual-text
 time([[Config for nvim-dap-virtual-text]], true)
 require("config/nvim-dap-virtual-text")
 time([[Config for nvim-dap-virtual-text]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require("config/telescope")
-time([[Config for telescope.nvim]], false)
 -- Config for: go.nvim
 time([[Config for go.nvim]], true)
 require("config/go")
 time([[Config for go.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require("config/nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require("config/telescope")
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require("config/nvim-tree")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: FTerm.nvim
+time([[Config for FTerm.nvim]], true)
+require("config/fterm")
+time([[Config for FTerm.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require("config/lualine")
+time([[Config for lualine.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require("config/nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-window.git
+time([[Config for nvim-window.git]], true)
+require("config/nvim-window")
+time([[Config for nvim-window.git]], false)
+-- Config for: marks.nvim
+time([[Config for marks.nvim]], true)
+require("config/marks")
+time([[Config for marks.nvim]], false)
+-- Config for: elixir.nvim
+time([[Config for elixir.nvim]], true)
+require("config/elixir")
+time([[Config for elixir.nvim]], false)
+-- Config for: true-zen.nvim
+time([[Config for true-zen.nvim]], true)
+require("config/true-zen")
+time([[Config for true-zen.nvim]], false)
+-- Config for: nvim-surround
+time([[Config for nvim-surround]], true)
+require("config/nvim-surround")
+time([[Config for nvim-surround]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
