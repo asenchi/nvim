@@ -1,10 +1,2 @@
-require('plugins')
-require('settings')
-require('mappings')
-require('utilities')
-
--- colortheme
-require('onedark').setup {
-  style = 'darker'
-}
-require('onedark').load()
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
