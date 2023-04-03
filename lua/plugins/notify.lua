@@ -1,21 +1,4 @@
 return {
-  -- elixir
-  {
-    "mhanberg/elixir.nvim",
-    dependencies = {
-      "neovim/nvim-lspconfig",
-      "nvim-lua/plenary.nvim",
-    },
-  },
-
-  -- golang
-  {
-    "ray-x/go.nvim",
-    requires = {
-      "ray-x/guihua.lua",
-    },
-  },
-
   -- notify
   {
     "rcarriga/nvim-notify",
