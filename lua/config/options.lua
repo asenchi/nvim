@@ -5,6 +5,8 @@
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
+vim.o.relativenumber = false
+
 vim.cmd([[
   au FileType go setl sw=4 ts=4 et
   au FileType elixir setl sw=2 sts=2 et
