@@ -4,7 +4,6 @@ return {
     "mhanberg/elixir.nvim",
     ft = { "elixir", "eex", "heex", "surface" },
     dependencies = {
-      "neovim/nvim-lspconfig",
       "nvim-lua/plenary.nvim",
     },
     config = function()
@@ -26,10 +25,6 @@ return {
           -- add the pipe operator
           vim.keymap.set("n", "<space>et", ":ElixirToPipe<cr>", map_opts)
           vim.keymap.set("v", "<space>em", ":ElixirExpandMacro<cr>", map_opts)
-
-          -- keybinds for vim-vsnip: https://github.com/hrsh7th/vim-vsnip
-          vim.cmd([[imap <expr> <C-l> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
-          vim.cmd([[smap <expr> <C-l> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
         end,
       })
     end,
