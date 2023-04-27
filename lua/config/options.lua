@@ -45,12 +45,3 @@ vim.cmd([[
       au InsertLeave * set cursorline
   augroup END
 ]])
-
-vim.cmd([[
-  hi ColorColumn guibg=#ABB2BF
-  augroup colorcol
-    au!
-    au InsertEnter * setlocal colorcolumn=80
-    au InsertLeave * setlocal colorcolumn=0
-  augroup END
-]])
