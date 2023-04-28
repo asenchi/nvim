@@ -27,22 +27,54 @@ vim.api.nvim_create_autocmd({ "WinEnter", "WinLeave", "InsertEnter", "InsertLeav
   end,
 })
 
+-- Golang likes 4
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = "go",
   callback = function()
     vim.opt_local.tabstop = 4
-    vim.opt_local.softtabstop = 4
-    vim.opt_local.shiftwidth = 4
-    vim.opt_local.expandtab = true
   end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "bash", "sh", "hcl", "elixir", "terraform", "lua", "json" },
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = "*.go",
   callback = function()
-    vim.opt_local.tabstop = 2
-    vim.opt_local.softtabstop = 2
-    vim.opt_local.shiftwidth = 2
-    vim.opt_local.expandtab = true
+    vim.cmd("silent!")
+    vim.cmd("lua require('go.format').gofmt()")
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "*.json", "*.md", "*.markdown" },
+  callback = function()
+    vim.o.conceallevel = 0
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "*.ex", "*.exs", "mix.lock" },
+  callback = function()
+    vim.o.filetype = "elixir"
+    vim.bo.syntax = "elixir"
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "*.tfstate", "*.tfstate.backup" },
+  callback = function()
+    vim.o.filetype = "json"
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "*.tf", "*.tfbackend" },
+  callback = function()
+    vim.o.filetype = "terraform"
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "*.terraformrc", "terraform.rc", "*.hcl" },
+  callback = function()
+    vim.o.filetype = "hcl"
   end,
 })

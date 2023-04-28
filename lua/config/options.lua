@@ -4,34 +4,12 @@
 
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
-
 vim.o.relativenumber = false
 
--- au FileType sh setl sw=2 ts=2 et
--- au BufNewFile,BufRead bash setf sh
--- au BufNewFile,BufRead sh setf sh
-vim.cmd([[
-  au FileType go setl sw=4 ts=4 et
-  au FileType elixir setl sw=2 sts=2 et
-  au FileType hcl setl sw=2 sts=2 ts=2
-  au FileType terraform setl sw=2 sts=2 ts=2
-  au FileType lua setl sw=2 ts=2 et
-  au FileType toml setl sw=2 ts=2 et
-  au FileType markdown setl tw=79
-  au FileType css setl sw=2 ts=2 et
-  au FileType html setl sw=2 ts=2 et
-  au FileType json setl sw=2 ts=2 et
-  silent! autocmd! filetypedetect BufRead,BufNewFile *.tf
-  au BufNewFile,BufRead *.hcl set filetype=hcl
-  au BufNewFile,BufRead *.terraformrc,terraform.rc set filetype=hcl
-  au BufNewFile,BufRead *.tf,*.tfvars,*.tfbackend set filetype=terraform
-  au BufNewFile,BufRead *.tfstate,*.tfstate.backup set filetype=json
-  au BufNewFile,BufRead json set ft=json conceallevel=0
-  au BufNewFile,BufRead css setf css
-  au BufNewFile,BufRead html setf html
-  au BufNewFile,BufRead *.md set ft=markdown syntax=markdown conceallevel=0
-  au BufNewFile,BufRead *.markdown set ft=markdown syntax=markdown conceallevel=0
-  au BUfNewFile,BufRead *.ex,*.exs set ft=elixir syntax=elixir
-  au BufRead,BufNewFile mix.lock set filetype=elixir
-  au BufWritePre *.go :silent! lua require('go.format').gofmt()
-]])
+vim.o.tabstop = 2
+vim.o.softtabstop = -1
+vim.o.shiftwidth = 0
+vim.o.expandtab = true
+vim.o.shiftround = true
+vim.o.smartindent = true
+vim.o.autoindent = true
