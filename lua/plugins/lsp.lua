@@ -38,6 +38,9 @@ return {
       servers = {
         terraformls = {},
         tflint = {},
+        bashls = {
+          ft = { "sh" },
+        },
         gopls = {
           ft = { "go", "gomod" },
           root_dir = require("lspconfig/util").root_pattern("go.work", "go.mod", ".git"),
