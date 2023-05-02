@@ -35,14 +35,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  pattern = "*.go",
-  callback = function()
-    vim.cmd("silent!")
-    vim.cmd("lua require('go.format').gofmt()")
-  end,
-})
-
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = { "*.json", "*.md", "*.markdown" },
   callback = function()
