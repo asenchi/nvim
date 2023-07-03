@@ -58,7 +58,7 @@ packer.startup(function(use)
   }
 
   use {
-    'RRethy/nvim-treesitter-textsubjects',
+    -- 'RRethy/nvim-treesitter-textsubjects',
     requires = {
       'nvim-treesitter/nvim-treesitter',
     },
@@ -138,8 +138,9 @@ packer.startup(function(use)
   }
 
   use {
-    'mhanberg/elixir.nvim',
-    requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" },
+    'elixir-tools/elixir-tools.nvim',
+    tag = "stable",
+    requires = { "nvim-lua/plenary.nvim" },
     config = requireconfig("elixir")
   }
 
