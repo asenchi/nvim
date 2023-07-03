@@ -58,7 +58,6 @@ packer.startup(function(use)
   }
 
   use {
-    -- 'RRethy/nvim-treesitter-textsubjects',
     requires = {
       'nvim-treesitter/nvim-treesitter',
     },
@@ -69,11 +68,6 @@ packer.startup(function(use)
     config = requireconfig("nvim-treesitter"),
     run = ":TSUpdate",
   }
-
-  -- use {
-  --   'Yggdroot/indentLine',
-  --   config = requireconfig("indentline"),
-  -- }
 
   use {
     'kyazdani42/nvim-tree.lua',
