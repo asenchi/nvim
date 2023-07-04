@@ -29,6 +29,8 @@ opt.showbreak= '↪'
 opt.showcmd = true
 opt.spell = true
 opt.syntax = true
+opt.timeoutlen = 300
+opt.timeout = true
 
 -- Buffers aren't destroyed (required for nvim-terminal)
 opt.hidden = true

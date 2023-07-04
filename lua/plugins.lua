@@ -58,12 +58,6 @@ packer.startup(function(use)
   }
 
   use {
-    requires = {
-      'nvim-treesitter/nvim-treesitter',
-    },
-  }
-
-  use {
     'nvim-treesitter/nvim-treesitter',
     config = requireconfig("nvim-treesitter"),
     run = ":TSUpdate",
@@ -160,6 +154,22 @@ packer.startup(function(use)
   use {
     "hashivim/vim-terraform",
     config = requireconfig("vim-terraform")
+  }
+
+  use { 
+    "lukas-reineke/indent-blankline.nvim",
+    config = requireconfig("indent-blankline")
+  }
+
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
   }
 
 end)
