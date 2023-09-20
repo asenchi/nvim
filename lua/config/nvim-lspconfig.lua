@@ -26,7 +26,7 @@ end
 -- setting up the elixir language server
 -- you have to manually specify the entrypoint cmd for elixir-ls
 local path_to_elixirls = vim.fn.expand("~/src/elixir-lsp/elixir-ls/release/language_server.sh")
-require('lspconfig').elixirls.setup {
+lspconfig.elixirls.setup {
   cmd = { path_to_elixirls },
   on_attach = on_attach,
   capabilities = capabilities,
@@ -40,3 +40,4 @@ require('lspconfig').elixirls.setup {
 
 lspconfig.terraformls.setup{}
 lspconfig.tflint.setup{}
+lspconfig.solargraph.setup{}
