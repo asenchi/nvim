@@ -1,4 +1,3 @@
-local utils = require("utilities")
 local packer = require("packer")
 
 packer.init({
@@ -13,93 +12,72 @@ packer.init({
 
 packer.startup(function(use)
 
-  use 'wbthomason/packer.nvim'
+  -- Manage packer itself
+  use { 'wbthomason/packer.nvim' }
 
   -- colortheme
-  use 'navarasu/onedark.nvim'
+  use { 'navarasu/onedark.nvim' }
 
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    config = requireconfig('lualine')
+    config = config('lualine')
+  }
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    config = config("nvim-treesitter"),
+    run = function()
+      local tsup = require('nvim-treesitter.install').update({ with_sync = true })
+      tsup()
+    end,
   }
 
   use {
     'neovim/nvim-lspconfig',
-    config = requireconfig('nvim-lspconfig'),
-  }
-
-  use {
-    'hrsh7th/nvim-cmp',
-    requires = {
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-path',
-      'onsails/lspkind-nvim',
-      'hrsh7th/vim-vsnip',
-      'hrsh7th/cmp-vsnip',
-    },
-    config = requireconfig('nvim-cmp'),
+    config = config('nvim-lspconfig'),
   }
 
   use {
     "nvim-telescope/telescope.nvim",
     requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
-    config = requireconfig('telescope'),
+    config = config('telescope'),
+  }
+
+  use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { { "nvim-telescope/telescope.nvim" }, { "nvim-lua/plenary.nvim" } }
+    config = function() require("telescope").load_extension "file_browser" end
   }
 
   use {
     "https://gitlab.com/yorickpeterse/nvim-window.git",
-    config = requireconfig('nvim-window'),
-  }
-
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    config = requireconfig("nvim-treesitter"),
-    run = ":TSUpdate",
-  }
-
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-    config = requireconfig("nvim-tree"),
-  }
-
-  use 'mfussenegger/nvim-dap'
-  use {
-    "rcarriga/nvim-dap-ui",
-    requires = {"mfussenegger/nvim-dap"}
-  }
-
-  use {
-    'theHamsta/nvim-dap-virtual-text',
-    requires = {
-      "mfussenegger/nvim-dap"
-    },
-    config = requireconfig("nvim-dap-virtual-text"),
+    config = config('nvim-window'),
+    config = function()
+      require("nvim-window").setup({
+          -- The characters available for hinting windows.
+          chars = {"a", "s", "f", "g", "h", "j", "k", "l"},
+          -- A group to use for overwriting the Normal highlight group in the floating
+          -- window. This can be used to change the background color.
+          normal_hl = "Normal",
+          -- The highlight group to apply to the line that contains the hint characters.
+          -- This is used to make them stand out more.
+          hint_hl = "Bold",
+          -- The border style to use for the floating window.
+          border = "single"
+      })
+    end,
   }
 
   use {
     'ray-x/go.nvim',
-    requires = {
-      'ray-x/guihua.lua',
-    },
-    config = requireconfig('go'),
+    requires = { 'ray-x/guihua.lua', },
+    config = function() require('go').setup() end,
   }
-
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   use {
     'sindrets/winshift.nvim',
-    config = requireconfig("winshift"),
-  }
-
-  use {
-    "kylechui/nvim-surround",
-    config = requireconfig("nvim-surround"),
+    config = config("winshift"),
   }
 
   use {
@@ -108,54 +86,54 @@ packer.startup(function(use)
   }
 
   use {
-    "Pocco81/true-zen.nvim",
-    config = requireconfig("true-zen")
-  }
-
-  use {
-    "folke/zen-mode.nvim",
-    config = requireconfig("zen-mode"),
-  }
-
-  use {
     'chentoast/marks.nvim',
     config = requireconfig("marks"),
+    config = function()
+      require('marks').setup({
+        mappings = {
+          next = "]m",
+          prev = "[m",
+        }
+      })
+    end,
   }
 
   use {
     'elixir-tools/elixir-tools.nvim',
     tag = "stable",
     requires = { "nvim-lua/plenary.nvim" },
-    config = requireconfig("elixir")
+    config = config("elixir-tools")
   }
 
   use { "tpope/vim-fugitive", event = "User InGitRepo", config = [[require('config.fugitive')]] }
 
-  use { "anuvyklack/windows.nvim",
+  use {
+    "anuvyklack/windows.nvim",
     requires = {
        "anuvyklack/middleclass",
        "anuvyklack/animation.nvim"
     },
-    config = requireconfig("windows")
+    config = function() require('windows').setup() end,
   }
 
   use {
     "NvChad/nvim-colorizer.lua",
-    config = requireconfig("nvim-colorizer")
-  }
-
-  use {
-    "habamax/vim-asciidoctor"
+    config = function() require('colorizer').setup() end,
   }
 
   use {
     "hashivim/vim-terraform",
-    config = requireconfig("vim-terraform")
+    config = function()
+      vim.cmd([[
+        let g:terraform_fmt_on_save=1
+        let g:terraform_align=1
+      ]])
+    end,
   }
 
   use { 
     "lukas-reineke/indent-blankline.nvim",
-    config = requireconfig("indent-blankline")
+    config = function() require("ibl").setup() end,
   }
 
   use {

@@ -14,4 +14,7 @@ require("telescope").setup({
       width = 0.99,
     },
   },
+  extensions = {
+    file_browser = {},
+  },
 })

@@ -1,93 +1,40 @@
-function keymap(mode, shortcut, command)
-  vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
-end
+local u = require("utilities")
 
-function map(shortcut, command)
-  keymap('', shortcut, command)
-end
-
-function nmap(shortcut, command)
-  keymap('n', shortcut, command)
-end
-
-function imap(shortcut, command)
-  keymap('i', shortcut, command)
-end
-
-function vmap(shortcut, command)
-  keymap('v', shortcut, command)
-end
-
-function cmap(shortcut, command)
-  keymap('c', shortcut, command)
-end
-
-function tmap(shortcut, command)
-  keymap('t', shortcut, command)
-end
-
--- Clear search results
-map("<leader><space>", ":nohlsearch<CR>")
-nmap("n", "nzzzv")
-nmap("N", "Nzzzv")
-map('<leader>q', ':close<CR>')
-
--- someday figure this out in lua
-vim.cmd('map <leader>e  :e <C-R>=expand("%:p:h") . "/"<CR>')
-
--- tabs
-map('<leader>tt', ':tabnew %<CR>')
-map('<leader>tc', '<Esc>:tabclose<CR>')
-map('<leader>tn', ':tabn<CR>')
-map('<leader>tp', ':tabp<CR>')
+u.nmap('<leader>cb', u.blink_cursor(), "Blink cursor location")
+u.map('<leader><space>', ":nohlsearch<CR>", "Clear search")
+u.map('<leader>e', ':e <C-R>=expand(%:p:h") . "/"<CR>', "Edit a file in current path")
+-- vim.cmd('map <leader>e  :e <C-R>=expand("%:p:h") . "/"<CR>')
 
 -- buffers
-map('<leader>fb', ':lua require("telescope.builtin").buffers()<CR>')
-nmap('<leader>bn', ':bnext<CR>')
-nmap('<leader>bp', ':bprevious<CR>')
-nmap('<leader>bf', ':bfirst<CR>')
-nmap('<leader>bl', ':blast<CR>')
+u.nmap('<leader>bn', ':bnext<CR>', "Next Buffer")
+u.nmap('<leader>bp', ':bprevious<CR>', "Prev Buffer")
 
-map('<leader>l', ':IndentLinesToggle<CR>')
-
-map('<leader>p', ':NvimTreeToggle<CR>')
-map('<C-b>', ':NvimTreeToggle<CR>')
+-- NvimTree
+u.map('<leader>p', ':NvimTreeToggle<CR>', "Toggle NvimTree")
+u.map('<C-b>', ':NvimTreeToggle<CR>', "Toggle NvimTree")
 
 -- telescope
-map('<leader>ff', ':lua require("telescope.builtin").find_files()<CR>')
-map('<leader>fg', ':lua require("telescope.builtin").live_grep()<CR>')
-map('<leader>fb', ':lua require("telescope.builtin").buffers()<CR>')
-map('<leader>fh', ':lua require("telescope.builtin").help_tags()<CR>')
-
-map('<leader>K', ':retab<CR>')
+u.map('<leader>ff', ':lua require("telescope.builtin").find_files()<CR>', "Find Files")
+u.map('<leader>fg', ':lua require("telescope.builtin").live_grep()<CR>', "Live Grep")
+u.map('<leader>fb', ':lua require("telescope.builtin").buffers()<CR>', "Find Buffers")
+u.map('<leader>fh', ':lua require("telescope.builtin").help_tags()<CR>', "Find Tags")
 
 -- exit the terminal easily
-tmap('<Esc>', '<C-\\><C-n><CR>')
-
--- True Zen
-map('<leader>zf', ':TZFocus<CR>')
-map('<leader>zm', ':TZMinimalist<CR>')
-map('<leader>za', ':TZAtaraxis<CR>')
--- Zen Mode
-map('<leader>zz', ':ZenMode<CR>')
+u.tmap('<Esc>', '<C-\\><C-n><CR>')
 
 -- Open preview
-map('<F5>', ':!make<CR>')
--- Run previous command
-map('<F6>', ':w<CR>:!!<CR>')
+u.map('<F5>', ':!make<CR>', "Run 'make'")
 -- Get popup window of diagnostic on current line
-map('<F7>', ':lua vim.diagnostic.open_float(0)<CR>')
-
-map('<leader>$', ':luafile $MYVIMRC')
+u.map('<F7>', ':lua vim.diagnostic.open_float(0)<CR>', "Popup Diagnostics")
 
 -- Move to a window
-map('<leader>p', ':lua require("nvim-window").pick()<CR>')
-map('<leader>v', ':vsplit<CR>')
-map('<leader>s', ':split<CR>')
+u.map('<leader>p', ':lua require("nvim-window").pick()<CR>', "Pick a Window")
+u.map('<leader>|', ':vsplit<CR>', "Split Vertically")
+u.map('<leader>-', ':split<CR>', "Split Horizontally")
 -- Move a window
-map('<leader>wm', ':WinShift<CR>')
+u.map('<leader>wm', ':WinShift<CR>', "Shift Windows")
 -- Swap windows
-map('<leader>wS', ':WinShift swap<CR>')
+u.map('<leader>ws', ':WinShift swap<CR>', "Swap Windows")
 -- Auto-size windows
-map('<leader>wa', ':WindowsToggleAutowidth<CR>')
-map('<leader>wz', ':WindowsMaximize<CR>')
+u.map('<leader>wa', ':WindowsToggleAutowidth<CR>', "Toggle Autowidth")
+u.map('<leader>wz', ':WindowsMaximize<CR>', "Maximize Window")

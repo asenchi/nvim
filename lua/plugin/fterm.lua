@@ -82,3 +82,4 @@ end)
 -- end
 -- 
 -- vim.api.nvim_set_keymap("n", "<F7>", "<cmd>lua _htop_toggle()<CR>", {noremap = true, silent = true})
+
