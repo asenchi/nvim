@@ -1,7 +1,4 @@
-function requireconfig(plugin)
-  return string.format('require("config/%s")', plugin)
-end
-
+local utils = require("utilities")
 local packer = require("packer")
 
 packer.init({
