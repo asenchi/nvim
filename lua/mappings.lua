@@ -28,8 +28,6 @@ end
 
 -- Clear search results
 map("<leader><space>", ":nohlsearch<CR>")
-nmap("n", "nzzzv")
-nmap("N", "Nzzzv")
 map('<leader>q', ':close<CR>')
 
 -- someday figure this out in lua
