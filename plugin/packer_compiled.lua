@@ -85,58 +85,17 @@ _G.packer_plugins = {
     path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/animation.nvim",
     url = "https://github.com/anuvyklack/animation.nvim"
   },
-  ["cmp-buffer"] = {
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/cmp-buffer",
-    url = "https://github.com/hrsh7th/cmp-buffer"
-  },
-  ["cmp-cmdline"] = {
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
-    url = "https://github.com/hrsh7th/cmp-cmdline"
-  },
-  ["cmp-nvim-lsp"] = {
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
-    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
-  },
-  ["cmp-path"] = {
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/cmp-path",
-    url = "https://github.com/hrsh7th/cmp-path"
-  },
-  ["cmp-vsnip"] = {
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
-    url = "https://github.com/hrsh7th/cmp-vsnip"
-  },
   ["elixir-tools.nvim"] = {
     config = { 'require("config/elixir")' },
     loaded = true,
     path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/elixir-tools.nvim",
     url = "https://github.com/elixir-tools/elixir-tools.nvim"
   },
-  ["go.nvim"] = {
-    config = { 'require("config/go")' },
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/go.nvim",
-    url = "https://github.com/ray-x/go.nvim"
-  },
-  ["guihua.lua"] = {
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/guihua.lua",
-    url = "https://github.com/ray-x/guihua.lua"
-  },
   ["indent-blankline.nvim"] = {
     config = { 'require("config/indent-blankline")' },
     loaded = true,
     path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
-  },
-  ["lspkind-nvim"] = {
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
-    url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lualine.nvim"] = {
     config = { 'require("config/lualine")' },
@@ -155,45 +114,11 @@ _G.packer_plugins = {
     path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/middleclass",
     url = "https://github.com/anuvyklack/middleclass"
   },
-  ["nvim-cmp"] = {
-    config = { 'require("config/nvim-cmp")' },
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/nvim-cmp",
-    url = "https://github.com/hrsh7th/nvim-cmp"
-  },
   ["nvim-colorizer.lua"] = {
     config = { 'require("config/nvim-colorizer")' },
     loaded = true,
     path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/NvChad/nvim-colorizer.lua"
-  },
-  ["nvim-dap"] = {
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/nvim-dap",
-    url = "https://github.com/mfussenegger/nvim-dap"
-  },
-  ["nvim-dap-ui"] = {
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
-    url = "https://github.com/rcarriga/nvim-dap-ui"
-  },
-  ["nvim-dap-virtual-text"] = {
-    config = { 'require("config/nvim-dap-virtual-text")' },
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
-    url = "https://github.com/theHamsta/nvim-dap-virtual-text"
-  },
-  ["nvim-lspconfig"] = {
-    config = { 'require("config/nvim-lspconfig")' },
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
-    url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-surround"] = {
-    config = { 'require("config/nvim-surround")' },
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/nvim-surround",
-    url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-tree.lua"] = {
     config = { 'require("config/nvim-tree")' },
@@ -250,17 +175,6 @@ _G.packer_plugins = {
     path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["true-zen.nvim"] = {
-    config = { 'require("config/true-zen")' },
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/true-zen.nvim",
-    url = "https://github.com/Pocco81/true-zen.nvim"
-  },
-  ["vim-asciidoctor"] = {
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/vim-asciidoctor",
-    url = "https://github.com/habamax/vim-asciidoctor"
-  },
   ["vim-fugitive"] = {
     config = { "require('config.fugitive')" },
     loaded = false,
@@ -274,11 +188,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/vim-terraform",
     url = "https://github.com/hashivim/vim-terraform"
-  },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/vim-vsnip",
-    url = "https://github.com/hrsh7th/vim-vsnip"
   },
   ["which-key.nvim"] = {
     config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0" },
@@ -297,100 +206,66 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/winshift.nvim",
     url = "https://github.com/sindrets/winshift.nvim"
-  },
-  ["zen-mode.nvim"] = {
-    config = { 'require("config/zen-mode")' },
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
-    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-require("config/lualine")
-time([[Config for lualine.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require("config/nvim-treesitter")
-time([[Config for nvim-treesitter]], false)
--- Config for: marks.nvim
-time([[Config for marks.nvim]], true)
-require("config/marks")
-time([[Config for marks.nvim]], false)
--- Config for: vim-terraform
-time([[Config for vim-terraform]], true)
-require("config/vim-terraform")
-time([[Config for vim-terraform]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require("config/nvim-cmp")
-time([[Config for nvim-cmp]], false)
--- Config for: nvim-window.git
-time([[Config for nvim-window.git]], true)
-require("config/nvim-window")
-time([[Config for nvim-window.git]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-require("config/nvim-colorizer")
-time([[Config for nvim-colorizer.lua]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
 time([[Config for which-key.nvim]], false)
--- Config for: elixir-tools.nvim
-time([[Config for elixir-tools.nvim]], true)
-require("config/elixir")
-time([[Config for elixir-tools.nvim]], false)
--- Config for: windows.nvim
-time([[Config for windows.nvim]], true)
-require("config/windows")
-time([[Config for windows.nvim]], false)
--- Config for: go.nvim
-time([[Config for go.nvim]], true)
-require("config/go")
-time([[Config for go.nvim]], false)
--- Config for: winshift.nvim
-time([[Config for winshift.nvim]], true)
-require("config/winshift")
-time([[Config for winshift.nvim]], false)
--- Config for: true-zen.nvim
-time([[Config for true-zen.nvim]], true)
-require("config/true-zen")
-time([[Config for true-zen.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require("config/nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
--- Config for: zen-mode.nvim
-time([[Config for zen-mode.nvim]], true)
-require("config/zen-mode")
-time([[Config for zen-mode.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require("config/telescope")
-time([[Config for telescope.nvim]], false)
 -- Config for: indent-blankline.nvim
 time([[Config for indent-blankline.nvim]], true)
 require("config/indent-blankline")
 time([[Config for indent-blankline.nvim]], false)
--- Config for: nvim-surround
-time([[Config for nvim-surround]], true)
-require("config/nvim-surround")
-time([[Config for nvim-surround]], false)
 -- Config for: FTerm.nvim
 time([[Config for FTerm.nvim]], true)
 require("config/fterm")
 time([[Config for FTerm.nvim]], false)
--- Config for: nvim-dap-virtual-text
-time([[Config for nvim-dap-virtual-text]], true)
-require("config/nvim-dap-virtual-text")
-time([[Config for nvim-dap-virtual-text]], false)
+-- Config for: windows.nvim
+time([[Config for windows.nvim]], true)
+require("config/windows")
+time([[Config for windows.nvim]], false)
+-- Config for: nvim-window.git
+time([[Config for nvim-window.git]], true)
+require("config/nvim-window")
+time([[Config for nvim-window.git]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require("config/lualine")
+time([[Config for lualine.nvim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+require("config/nvim-colorizer")
+time([[Config for nvim-colorizer.lua]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 require("config/nvim-tree")
 time([[Config for nvim-tree.lua]], false)
+-- Config for: marks.nvim
+time([[Config for marks.nvim]], true)
+require("config/marks")
+time([[Config for marks.nvim]], false)
+-- Config for: winshift.nvim
+time([[Config for winshift.nvim]], true)
+require("config/winshift")
+time([[Config for winshift.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require("config/nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require("config/telescope")
+time([[Config for telescope.nvim]], false)
+-- Config for: vim-terraform
+time([[Config for vim-terraform]], true)
+require("config/vim-terraform")
+time([[Config for vim-terraform]], false)
+-- Config for: elixir-tools.nvim
+time([[Config for elixir-tools.nvim]], true)
+require("config/elixir")
+time([[Config for elixir-tools.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads

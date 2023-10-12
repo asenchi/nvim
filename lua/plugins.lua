@@ -1,7 +1,4 @@
-function requireconfig(plugin)
-  return string.format('require("config/%s")', plugin)
-end
-
+local requireconfig = require('utilities').requireconfig
 local packer = require("packer")
 
 packer.init({
@@ -27,24 +24,24 @@ packer.startup(function(use)
     config = requireconfig('lualine')
   }
 
-  use {
-    'neovim/nvim-lspconfig',
-    config = requireconfig('nvim-lspconfig'),
-  }
+  -- use {
+  --   'neovim/nvim-lspconfig',
+  --   config = requireconfig('nvim-lspconfig'),
+  -- }
 
-  use {
-    'hrsh7th/nvim-cmp',
-    requires = {
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-path',
-      'onsails/lspkind-nvim',
-      'hrsh7th/vim-vsnip',
-      'hrsh7th/cmp-vsnip',
-    },
-    config = requireconfig('nvim-cmp'),
-  }
+  -- use {
+  --   'hrsh7th/nvim-cmp',
+  --   requires = {
+  --     'hrsh7th/cmp-nvim-lsp',
+  --     'hrsh7th/cmp-buffer',
+  --     'hrsh7th/cmp-cmdline',
+  --     'hrsh7th/cmp-path',
+  --     'onsails/lspkind-nvim',
+  --     'hrsh7th/vim-vsnip',
+  --     'hrsh7th/cmp-vsnip',
+  --   },
+  --   config = requireconfig('nvim-cmp'),
+  -- }
 
   use {
     "nvim-telescope/telescope.nvim",
@@ -71,27 +68,27 @@ packer.startup(function(use)
     config = requireconfig("nvim-tree"),
   }
 
-  use 'mfussenegger/nvim-dap'
-  use {
-    "rcarriga/nvim-dap-ui",
-    requires = {"mfussenegger/nvim-dap"}
-  }
+  -- use 'mfussenegger/nvim-dap'
+  -- use {
+  --   "rcarriga/nvim-dap-ui",
+  --   requires = {"mfussenegger/nvim-dap"}
+  -- }
 
-  use {
-    'theHamsta/nvim-dap-virtual-text',
-    requires = {
-      "mfussenegger/nvim-dap"
-    },
-    config = requireconfig("nvim-dap-virtual-text"),
-  }
+  -- use {
+  --   'theHamsta/nvim-dap-virtual-text',
+  --   requires = {
+  --     "mfussenegger/nvim-dap"
+  --   },
+  --   config = requireconfig("nvim-dap-virtual-text"),
+  -- }
 
-  use {
-    'ray-x/go.nvim',
-    requires = {
-      'ray-x/guihua.lua',
-    },
-    config = requireconfig('go'),
-  }
+  -- use {
+  --   'ray-x/go.nvim',
+  --   requires = {
+  --     'ray-x/guihua.lua',
+  --   },
+  --   config = requireconfig('go'),
+  -- }
 
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
@@ -101,23 +98,8 @@ packer.startup(function(use)
   }
 
   use {
-    "kylechui/nvim-surround",
-    config = requireconfig("nvim-surround"),
-  }
-
-  use {
     "numToStr/FTerm.nvim",
     config = requireconfig("fterm")
-  }
-
-  use {
-    "Pocco81/true-zen.nvim",
-    config = requireconfig("true-zen")
-  }
-
-  use {
-    "folke/zen-mode.nvim",
-    config = requireconfig("zen-mode"),
   }
 
   use {
@@ -145,10 +127,6 @@ packer.startup(function(use)
   use {
     "NvChad/nvim-colorizer.lua",
     config = requireconfig("nvim-colorizer")
-  }
-
-  use {
-    "habamax/vim-asciidoctor"
   }
 
   use {

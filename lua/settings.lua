@@ -43,8 +43,6 @@ opt.smartcase = true -- case insensitive unless used in search
 opt.conceallevel = 0
 
 vim.cmd([[
-
-
   au FileType go setl sw=4 ts=4 et
   au FileType elixir setl sw=2 sts=2 et
   au FileType sh setl sw=2 ts=2 et
@@ -93,8 +91,3 @@ vim.cmd([[
     au InsertLeave * setlocal colorcolumn=0
   augroup END
 ]])
-
--- If you have an init.lua
-vim.api.nvim_create_autocmd("FileType", {pattern = "markdown", command = "set awa"})
--- Use the following if your buffer is set to become hidden
-vim.api.nvim_create_autocmd("BufLeave", {pattern = "*.md", command = "silent! wall"})
