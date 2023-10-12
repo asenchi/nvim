@@ -54,11 +54,11 @@ packer.startup(function(use)
     config = requireconfig('nvim-window'),
   }
 
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    config = requireconfig("nvim-treesitter"),
-    run = ":TSUpdate",
-  }
+  -- use {
+  --   'nvim-treesitter/nvim-treesitter',
+  --   config = requireconfig("nvim-treesitter"),
+  --   run = ":TSUpdate",
+  -- }
 
   use {
     'nvim-tree/nvim-tree.lua',
@@ -90,7 +90,7 @@ packer.startup(function(use)
   --   config = requireconfig('go'),
   -- }
 
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
+  -- use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   use {
     'sindrets/winshift.nvim',

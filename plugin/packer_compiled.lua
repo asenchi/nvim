@@ -126,17 +126,6 @@ _G.packer_plugins = {
     path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
-  ["nvim-treesitter"] = {
-    config = { 'require("config/nvim-treesitter")' },
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  },
-  ["nvim-ts-context-commentstring"] = {
-    loaded = true,
-    path = "/Users/curt.micol/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
-    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
-  },
   ["nvim-web-devicons"] = {
     loaded = false,
     needs_bufread = false,
@@ -210,62 +199,58 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
-time([[Config for which-key.nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-require("config/indent-blankline")
-time([[Config for indent-blankline.nvim]], false)
--- Config for: FTerm.nvim
-time([[Config for FTerm.nvim]], true)
-require("config/fterm")
-time([[Config for FTerm.nvim]], false)
--- Config for: windows.nvim
-time([[Config for windows.nvim]], true)
-require("config/windows")
-time([[Config for windows.nvim]], false)
--- Config for: nvim-window.git
-time([[Config for nvim-window.git]], true)
-require("config/nvim-window")
-time([[Config for nvim-window.git]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-require("config/lualine")
-time([[Config for lualine.nvim]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-require("config/nvim-colorizer")
-time([[Config for nvim-colorizer.lua]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 require("config/nvim-tree")
 time([[Config for nvim-tree.lua]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+require("config/indent-blankline")
+time([[Config for indent-blankline.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require("config/lualine")
+time([[Config for lualine.nvim]], false)
 -- Config for: marks.nvim
 time([[Config for marks.nvim]], true)
 require("config/marks")
 time([[Config for marks.nvim]], false)
--- Config for: winshift.nvim
-time([[Config for winshift.nvim]], true)
-require("config/winshift")
-time([[Config for winshift.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require("config/nvim-treesitter")
-time([[Config for nvim-treesitter]], false)
+-- Config for: FTerm.nvim
+time([[Config for FTerm.nvim]], true)
+require("config/fterm")
+time([[Config for FTerm.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require("config/telescope")
 time([[Config for telescope.nvim]], false)
+-- Config for: winshift.nvim
+time([[Config for winshift.nvim]], true)
+require("config/winshift")
+time([[Config for winshift.nvim]], false)
 -- Config for: vim-terraform
 time([[Config for vim-terraform]], true)
 require("config/vim-terraform")
 time([[Config for vim-terraform]], false)
+-- Config for: nvim-window.git
+time([[Config for nvim-window.git]], true)
+require("config/nvim-window")
+time([[Config for nvim-window.git]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+require("config/nvim-colorizer")
+time([[Config for nvim-colorizer.lua]], false)
 -- Config for: elixir-tools.nvim
 time([[Config for elixir-tools.nvim]], true)
 require("config/elixir")
 time([[Config for elixir-tools.nvim]], false)
+-- Config for: windows.nvim
+time([[Config for windows.nvim]], true)
+require("config/windows")
+time([[Config for windows.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads

@@ -7,7 +7,7 @@ local opt = vim.o
 
 -- settings
 opt.showmatch = true -- show matching brackets
-opt.synmaxcol = 300 -- stop syntax highlight after x lines for perf
+opt.synmaxcol = 500 -- stop syntax highlight after x lines for perf
 opt.laststatus = 2 -- always show status line
 opt.smartindent = true
 opt.autoindent = true
