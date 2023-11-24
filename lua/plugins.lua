@@ -93,7 +93,7 @@ packer.startup(function(use)
     config = requireconfig('go'),
   }
 
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
+  -- use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   use {
     'sindrets/winshift.nvim',
