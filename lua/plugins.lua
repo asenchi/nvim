@@ -93,44 +93,22 @@ packer.startup(function(use)
     config = requireconfig('go'),
   }
 
-  -- use 'JoosepAlviste/nvim-ts-context-commentstring'
-
   use {
     'sindrets/winshift.nvim',
     config = requireconfig("winshift"),
   }
 
-  use {
-    "kylechui/nvim-surround",
-    config = requireconfig("nvim-surround"),
-  }
+  -- use {
+  --   'chentoast/marks.nvim',
+  --   config = requireconfig("marks"),
+  -- }
 
-  use {
-    "numToStr/FTerm.nvim",
-    config = requireconfig("fterm")
-  }
-
-  use {
-    "Pocco81/true-zen.nvim",
-    config = requireconfig("true-zen")
-  }
-
-  use {
-    "folke/zen-mode.nvim",
-    config = requireconfig("zen-mode"),
-  }
-
-  use {
-    'chentoast/marks.nvim',
-    config = requireconfig("marks"),
-  }
-
-  use {
-    'elixir-tools/elixir-tools.nvim',
-    tag = "stable",
-    requires = { "nvim-lua/plenary.nvim" },
-    config = requireconfig("elixir")
-  }
+  -- use {
+  --   'elixir-tools/elixir-tools.nvim',
+  --   tag = "stable",
+  --   requires = { "nvim-lua/plenary.nvim" },
+  --   config = requireconfig("elixir")
+  -- }
 
   use { "tpope/vim-fugitive", event = "User InGitRepo", config = [[require('config.fugitive')]] }
 
@@ -159,17 +137,6 @@ packer.startup(function(use)
   use { 
     "lukas-reineke/indent-blankline.nvim",
     config = requireconfig("indent-blankline")
-  }
-
-  use {
-    "folke/which-key.nvim",
-    config = function()
-      require("which-key").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
   }
 
 end)

@@ -1,6 +1,6 @@
-require('marks').setup({
-  mappings = {
-    next = "]m",
-    prev = "[m",
-  }
-})
+-- require('marks').setup({
+--   mappings = {
+--     next = "]m",
+--     prev = "[m",
+--   }
+-- })

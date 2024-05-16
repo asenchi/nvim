@@ -62,13 +62,6 @@ map('<leader>K', ':retab<CR>')
 -- exit the terminal easily
 tmap('<Esc>', '<C-\\><C-n><CR>')
 
--- True Zen
-map('<leader>zf', ':TZFocus<CR>')
-map('<leader>zm', ':TZMinimalist<CR>')
-map('<leader>za', ':TZAtaraxis<CR>')
--- Zen Mode
-map('<leader>zz', ':ZenMode<CR>')
-
 -- Open preview
 map('<F5>', ':!make<CR>')
 -- Run previous command
