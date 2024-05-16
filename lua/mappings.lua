@@ -67,7 +67,7 @@ map('<F5>', ':!make<CR>')
 -- Run previous command
 map('<F6>', ':w<CR>:!!<CR>')
 -- Get popup window of diagnostic on current line
-map('<F7>', ':lua vim.diagnostic.open_float(0)<CR>')
+-- map('<F7>', ':lua vim.diagnostic.open_float(0)<CR>')
 
 map('<leader>$', ':luafile $MYVIMRC')
 

@@ -1,4 +1,4 @@
-require('ts_context_commentstring').setup {}
+-- require('ts_context_commentstring').setup {}
 require('nvim-treesitter.configs').setup {
 
   context_commentstring = {

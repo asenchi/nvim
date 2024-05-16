@@ -28,7 +28,7 @@ opt.termguicolors = true
 opt.showbreak= '↪'
 opt.showcmd = true
 opt.spell = true
-opt.syntax = true
+-- opt.syntax = true
 opt.timeoutlen = 300
 opt.timeout = true
 
