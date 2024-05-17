@@ -2,7 +2,11 @@ local elixir = require("elixir")
 local elixirls = require("elixir.elixirls")
 
 elixir.setup({
+  credo = {
+    enable = false,
+  },
   elixirls = {
+    enable = true,
     -- specify a repository and branch
     repo = "mhanberg/elixir-ls", -- defaults to elixir-lsp/elixir-ls
     branch = "mh/all-workspace-symbols", -- defaults to nil, just checkouts out the default branch, mutually exclusive with the `tag` option
@@ -26,10 +30,6 @@ elixir.setup({
       -- add the pipe operator
       vim.keymap.set("n", "<space>et", ":ElixirToPipe<cr>", map_opts)
       vim.keymap.set("v", "<space>em", ":ElixirExpandMacro<cr>", map_opts)
-
-      -- keybinds for vim-vsnip: https://github.com/hrsh7th/vim-vsnip
-      vim.cmd([[imap <expr> <C-l> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
-      vim.cmd([[smap <expr> <C-l> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
     end
   }
 })

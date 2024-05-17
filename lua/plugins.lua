@@ -101,12 +101,7 @@ packer.startup(function(use)
   --   config = requireconfig("marks"),
   -- }
 
-  -- use {
-  --   'elixir-tools/elixir-tools.nvim',
-  --   tag = "stable",
-  --   requires = { "nvim-lua/plenary.nvim" },
-  --   config = requireconfig("elixir")
-  -- }
+  use({ "elixir-tools/elixir-tools.nvim", tag = "stable", requires = { "nvim-lua/plenary.nvim" }})
 
   use { "tpope/vim-fugitive", event = "User InGitRepo", config = [[require('config.fugitive')]] }
 

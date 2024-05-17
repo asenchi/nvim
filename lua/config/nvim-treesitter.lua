@@ -8,7 +8,6 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = {
     "bash",
     "css",
-    "dockerfile",
     "elixir",
     "go",
     "hcl",
