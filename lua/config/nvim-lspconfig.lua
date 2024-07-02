@@ -41,7 +41,6 @@ lspconfig.elixirls.setup {
 lspconfig.terraformls.setup{}
 lspconfig.tflint.setup{}
 lspconfig.solargraph.setup{}
-
 lspconfig.gopls.setup({
   settings = {
     gopls = {

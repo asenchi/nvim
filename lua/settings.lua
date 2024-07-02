@@ -38,6 +38,7 @@ opt.hidden = true
 -- search
 opt.ignorecase = true -- case insensitive searching
 opt.smartcase = true -- case insensitive unless used in search
+opt.inccommand = "split"
 
 -- I hate when things are hidden, so hard to understand their shape
 opt.conceallevel = 0

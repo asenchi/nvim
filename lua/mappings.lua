@@ -29,6 +29,7 @@ end
 -- Clear search results
 map("<leader><space>", ":nohlsearch<CR>")
 map('<leader>q', ':close<CR>')
+nmap('<leader>xr', ":%s/<C-r><C-w>//g<Left><Left>")
 
 -- someday figure this out in lua
 vim.cmd('map <leader>e  :e <C-R>=expand("%:p:h") . "/"<CR>')
