@@ -32,6 +32,8 @@ opt.spell = true
 opt.timeoutlen = 300
 opt.timeout = true
 
+opt.completeopt = "menu,menuone,noinsert,preview"
+
 -- Buffers aren't destroyed (required for nvim-terminal)
 opt.hidden = true
 
@@ -44,8 +46,6 @@ opt.inccommand = "split"
 opt.conceallevel = 0
 
 vim.cmd([[
-
-
   au FileType go setl sw=4 ts=4 et
   au FileType elixir setl sw=2 sts=2 et
   au FileType sh setl sw=2 ts=2 et
@@ -93,6 +93,17 @@ vim.cmd([[
     au InsertEnter * setlocal colorcolumn=80
     au InsertLeave * setlocal colorcolumn=0
   augroup END
+]])
+
+-- theme
+vim.cmd([[
+  set termguicolors
+  set bg=dark
+  colorscheme quiet
+  highlight Keyword gui=bold
+  highlight Comment gui=italic
+  highlight Constant guifg=#999999
+  highlight NormalFloat guibg=#333333
 ]])
 
 -- If you have an init.lua

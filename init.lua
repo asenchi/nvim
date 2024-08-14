@@ -3,8 +3,10 @@ require('settings')
 require('mappings')
 require('utilities')
 
+vim.loader.enable()
+
 -- colortheme
-require('onedark').setup {
-  style = 'darker'
-}
-require('onedark').load()
+-- require('onedark').setup {
+--   style = 'darker'
+-- }
+-- require('onedark').load()

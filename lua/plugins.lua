@@ -21,7 +21,7 @@ packer.startup(function(use)
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
 
   -- colortheme
-  use 'navarasu/onedark.nvim'
+  -- use 'navarasu/onedark.nvim'
 
   use {
     'nvim-lualine/lualine.nvim',
