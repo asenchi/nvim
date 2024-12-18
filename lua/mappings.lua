@@ -41,7 +41,6 @@ map('<leader>tn', ':tabn<CR>')
 map('<leader>tp', ':tabp<CR>')
 
 -- buffers
-map('<leader>fb', ':lua require("telescope.builtin").buffers()<CR>')
 nmap('<leader>bn', ':bnext<CR>')
 nmap('<leader>bp', ':bprevious<CR>')
 nmap('<leader>bf', ':bfirst<CR>')
@@ -52,11 +51,12 @@ map('<leader>l', ':IndentLinesToggle<CR>')
 map('<leader>p', ':NvimTreeToggle<CR>')
 map('<C-b>', ':NvimTreeToggle<CR>')
 
--- telescope
-map('<leader>ff', ':lua require("telescope.builtin").find_files()<CR>')
-map('<leader>fg', ':lua require("telescope.builtin").live_grep()<CR>')
-map('<leader>fb', ':lua require("telescope.builtin").buffers()<CR>')
-map('<leader>fh', ':lua require("telescope.builtin").help_tags()<CR>')
+-- fzf-lua
+map('<leader>fb', ':lua require("fzf-lua").buffers()<CR>')
+map('<leader>ff', ':lua require("fzf-lua").files()<CR>')
+map('<leader>fg', ':lua require("fzf-lua").live_grep()<CR>')
+map('<leader>fb', ':lua require("fzf-lua").buffers()<CR>')
+map('<leader>fh', ':lua require("fzf-lua").btags()<CR>')
 
 map('<leader>K', ':retab<CR>')
 

@@ -25,7 +25,7 @@ packer.startup(function(use)
 
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
     config = requireconfig('lualine')
   }
 
@@ -46,6 +46,11 @@ packer.startup(function(use)
       'hrsh7th/cmp-vsnip',
     },
     config = requireconfig('nvim-cmp'),
+  }
+
+  use {
+    "ibhagwan/fzf-lua",
+    requires = { "nvim-tree/nvim-web-devicons" },
   }
 
   use {
