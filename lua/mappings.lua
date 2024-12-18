@@ -1,5 +1,5 @@
 function keymap(mode, shortcut, command)
-  vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
+  vim.keymap.set(mode, shortcut, command, { noremap = true, silent = true })
 end
 
 function map(shortcut, command)
@@ -46,9 +46,6 @@ nmap('<leader>bp', ':bprevious<CR>')
 nmap('<leader>bf', ':bfirst<CR>')
 nmap('<leader>bl', ':blast<CR>')
 
-map('<leader>l', ':IndentLinesToggle<CR>')
-
-map('<leader>p', ':NvimTreeToggle<CR>')
 map('<C-b>', ':NvimTreeToggle<CR>')
 
 -- fzf-lua
@@ -57,18 +54,12 @@ map('<leader>ff', ':lua require("fzf-lua").files()<CR>')
 map('<leader>fg', ':lua require("fzf-lua").live_grep()<CR>')
 map('<leader>fb', ':lua require("fzf-lua").buffers()<CR>')
 map('<leader>fh', ':lua require("fzf-lua").btags()<CR>')
+vim.keymap.set({ "n", "v", "i" }, "<C-x><C-f>", function() require("fzf-lua").complete_path() end, { silent = true, desc = "Fuzzy complete path" })
 
 map('<leader>K', ':retab<CR>')
 
 -- exit the terminal easily
 tmap('<Esc>', '<C-\\><C-n><CR>')
-
--- Open preview
-map('<F5>', ':!make<CR>')
--- Run previous command
-map('<F6>', ':w<CR>:!!<CR>')
--- Get popup window of diagnostic on current line
--- map('<F7>', ':lua vim.diagnostic.open_float(0)<CR>')
 
 map('<leader>$', ':luafile $MYVIMRC')
 
@@ -76,10 +67,3 @@ map('<leader>$', ':luafile $MYVIMRC')
 map('<leader>p', ':lua require("nvim-window").pick()<CR>')
 map('<leader>v', ':vsplit<CR>')
 map('<leader>s', ':split<CR>')
--- Move a window
-map('<leader>wm', ':WinShift<CR>')
--- Swap windows
-map('<leader>wS', ':WinShift swap<CR>')
--- Auto-size windows
-map('<leader>wa', ':WindowsToggleAutowidth<CR>')
-map('<leader>wz', ':WindowsMaximize<CR>')
