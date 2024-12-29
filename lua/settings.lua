@@ -98,13 +98,14 @@ vim.cmd([[
 -- theme
 vim.cmd([[
   set termguicolors
-  set bg=dark
   colorscheme quiet
   highlight Keyword gui=bold
   highlight Comment gui=italic
   highlight Constant guifg=#999999
-  highlight NormalFloat guibg=#333333
+  highlight Normal ctermbg=none guibg=none
 ]])
+  -- set bg=dark
+  -- highlight NormalFloat guibg=#333333
 
 -- If you have an init.lua
 vim.api.nvim_create_autocmd("FileType", {pattern = "markdown", command = "set awa"})
