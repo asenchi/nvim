@@ -25,7 +25,7 @@ end
 
 -- setting up the elixir language server
 -- you have to manually specify the entrypoint cmd for elixir-ls
-local path_to_elixirls = vim.fn.expand("~/src/elixir-lsp/elixir-ls/scripts/language_server.sh")
+local path_to_elixirls = vim.fn.expand("~/src/elixir-lsp/language_server.sh")
 lspconfig.elixirls.setup {
   cmd = { path_to_elixirls },
   on_attach = on_attach,
