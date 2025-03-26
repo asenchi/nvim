@@ -18,34 +18,12 @@ packer.startup(function(use)
 
   use 'wbthomason/packer.nvim'
 
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
-
-  -- colortheme
-  -- use 'navarasu/onedark.nvim'
+  use 'nvim-tree/nvim-web-devicons'
 
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true },
     config = requireconfig('lualine')
-  }
-
-  use {
-    'neovim/nvim-lspconfig',
-    config = requireconfig('nvim-lspconfig'),
-  }
-
-  use {
-    'hrsh7th/nvim-cmp',
-    requires = {
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-path',
-      'onsails/lspkind-nvim',
-      'hrsh7th/vim-vsnip',
-      'hrsh7th/cmp-vsnip',
-    },
-    config = requireconfig('nvim-cmp'),
   }
 
   use {
@@ -78,16 +56,6 @@ packer.startup(function(use)
     config = requireconfig("nvim-tree"),
   }
 
-  use 'mfussenegger/nvim-dap'
-
-  use {
-    'theHamsta/nvim-dap-virtual-text',
-    requires = {
-      "mfussenegger/nvim-dap"
-    },
-    config = requireconfig("nvim-dap-virtual-text"),
-  }
-
   use {
     'ray-x/go.nvim',
     requires = {
@@ -95,16 +63,6 @@ packer.startup(function(use)
     },
     config = requireconfig('go'),
   }
-
-  use {
-    'sindrets/winshift.nvim',
-    config = requireconfig("winshift"),
-  }
-
-  -- use {
-  --   'chentoast/marks.nvim',
-  --   config = requireconfig("marks"),
-  -- }
 
   use({ "elixir-tools/elixir-tools.nvim", tag = "stable", requires = { "nvim-lua/plenary.nvim" }})
 
