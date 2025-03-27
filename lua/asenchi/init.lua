@@ -3,6 +3,8 @@ vim.g.mapleader = ','
 require("asenchi.settings")
 require("asenchi.mappings")
 require("asenchi.theme")
-require("asenchi.lazy")
+
+-- initialize lazy.nvim
+require("asenchi.init_lazy")
 
 vim.loader.enable()
