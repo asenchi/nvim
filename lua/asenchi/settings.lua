@@ -3,8 +3,6 @@ vim.diagnostic.config({
   virtual_lines = { current_line = true },
 })
 
-vim.g.mapleader = ','
-
 -- looks cleaner to me
 local opt = vim.o
 
@@ -34,8 +32,9 @@ opt.spell = true
 -- opt.syntax = true
 opt.timeoutlen = 300
 opt.timeout = true
+opt.winborder = 'rounded'
 
-opt.completeopt = "menu,menuone,noinsert,preview"
+opt.completeopt = "menu,menuone,noinsert,preview,noselect"
 
 -- Buffers aren't destroyed (required for nvim-terminal)
 opt.hidden = true
@@ -98,19 +97,12 @@ vim.cmd([[
   augroup END
 ]])
 
--- theme
-vim.cmd([[
-  set termguicolors
-  colorscheme quiet
-  highlight Keyword gui=bold
-  highlight Comment gui=italic
-  highlight Constant guifg=#999999
-  highlight Normal ctermbg=none guibg=none
-]])
-  -- set bg=dark
-  -- highlight NormalFloat guibg=#333333
-
 -- If you have an init.lua
-vim.api.nvim_create_autocmd("FileType", {pattern = "markdown", command = "set awa"})
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown", command = "set awa"
+})
+
 -- Use the following if your buffer is set to become hidden
-vim.api.nvim_create_autocmd("BufLeave", {pattern = "*.md", command = "silent! wall"})
+vim.api.nvim_create_autocmd("BufLeave", {
+  pattern = "*.md", command = "silent! wall"
+})
