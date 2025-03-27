@@ -79,14 +79,22 @@ local function on_attach(bufnr)
   vim.keymap.set('n', '<2-RightMouse>', api.tree.change_root_to_node, opts('CD'))
   -- END_DEFAULT_ON_ATTACH
 
-
   -- Mappings migrated from view.mappings.list
   --
   -- You will need to insert "your code goes here" for any mappings with a custom action_cb
   vim.keymap.set('n', 'u', api.tree.change_root_to_parent, opts('Up'))
-
 end
 
-require("nvim-tree").setup({
-  on_attach = on_attach,
-})
+return {
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons", -- optional, for file icons
+    },
+    config = function()
+      require("nvim-tree").setup({
+        on_attach = on_attach,
+      })
+    end
+  }
+}

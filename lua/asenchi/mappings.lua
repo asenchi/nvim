@@ -1,28 +1,28 @@
-function keymap(mode, shortcut, command)
+local function keymap(mode, shortcut, command)
   vim.keymap.set(mode, shortcut, command, { noremap = true, silent = true })
 end
 
-function map(shortcut, command)
+local function map(shortcut, command)
   keymap('', shortcut, command)
 end
 
-function nmap(shortcut, command)
+local function nmap(shortcut, command)
   keymap('n', shortcut, command)
 end
 
-function imap(shortcut, command)
+local function imap(shortcut, command)
   keymap('i', shortcut, command)
 end
 
-function vmap(shortcut, command)
+local function vmap(shortcut, command)
   keymap('v', shortcut, command)
 end
 
-function cmap(shortcut, command)
+local function cmap(shortcut, command)
   keymap('c', shortcut, command)
 end
 
-function tmap(shortcut, command)
+local function tmap(shortcut, command)
   keymap('t', shortcut, command)
 end
 
@@ -54,7 +54,9 @@ map('<leader>ff', ':lua require("fzf-lua").files()<CR>')
 map('<leader>fg', ':lua require("fzf-lua").live_grep()<CR>')
 map('<leader>fb', ':lua require("fzf-lua").buffers()<CR>')
 map('<leader>fh', ':lua require("fzf-lua").btags()<CR>')
-vim.keymap.set({ "n", "v", "i" }, "<C-x><C-f>", function() require("fzf-lua").complete_path() end, { silent = true, desc = "Fuzzy complete path" })
+vim.keymap.set({ "n", "v", "i" }, "<leader>fc", function()
+  require("fzf-lua").complete_path()
+end)
 
 map('<leader>K', ':retab<CR>')
 
@@ -67,3 +69,14 @@ map('<leader>$', ':luafile $MYVIMRC')
 map('<leader>p', ':lua require("nvim-window").pick()<CR>')
 map('<leader>v', ':vsplit<CR>')
 map('<leader>s', ':split<CR>')
+
+local timer = vim.loop.new_timer()
+local blink = function()
+    local cnt, blink_times = 0, 8
+    timer:start(0, 100, vim.schedule_wrap(function()
+        vim.cmd('set cursorcolumn! cursorline!')
+        cnt = cnt + 1
+        if cnt == blink_times then timer:stop() end
+    end))
+end
+nmap('<leader>cb', blink)

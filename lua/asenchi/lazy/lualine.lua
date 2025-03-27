@@ -81,63 +81,65 @@ local function modified()
   return ''
 end
 
-require('lualine').setup {
-  options = {
-    theme = theme,
-    component_separators = '',
-    section_separators = { left = '', right = '' },
-  },
-  sections = process_sections {
-    lualine_a = {
-      'mode',
-    },
-    lualine_b = {
-      'branch',
-    },
-    lualine_c = {
-      {
-        'diagnostics',
-        source = { 'nvim' },
-        sections = { 'error' },
-        diagnostics_color = { error = { bg = colors.red, fg = colors.white } },
+return  {
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    opts = {
+      options = {
+        theme = theme,
+        component_separators = '',
+        section_separators = { left = '', right = '' },
       },
-      {
-        'diagnostics',
-        source = { 'nvim' },
-        sections = { 'warn' },
-        diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
+      sections = process_sections {
+        lualine_a = { 'mode', },
+        lualine_b = { 'branch', },
+        lualine_c = {
+          {
+            'diagnostics',
+            source = { 'nvim' },
+            sections = { 'error' },
+            diagnostics_color = { error = { bg = colors.red, fg = colors.white } },
+          },
+          {
+            'diagnostics',
+            source = { 'nvim' },
+            sections = { 'warn' },
+            diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
+          },
+          {
+            'filename',
+            file_status = false,
+            path = 0
+          },
+          { modified, color = { bg = colors.red } },
+          {
+            '%w',
+            cond = function()
+              return vim.wo.previewwindow
+            end,
+          },
+          {
+            '%r',
+            cond = function()
+              return vim.bo.readonly
+            end,
+          },
+          {
+            '%q',
+            cond = function()
+              return vim.bo.buftype == 'quickfix'
+            end,
+          },
+        },
+        lualine_x = { search_result },
+        lualine_y = {
+          'diff',
+          'filetype'
+        },
+        lualine_z = { '%l:%c', '%p%%/%L' },
       },
-      {
-        'filename',
-        file_status = false,
-        path = 0
-      },
-      { modified, color = { bg = colors.red } },
-      {
-        '%w',
-        cond = function()
-          return vim.wo.previewwindow
-        end,
-      },
-      {
-        '%r',
-        cond = function()
-          return vim.bo.readonly
-        end,
-      },
-      {
-        '%q',
-        cond = function()
-          return vim.bo.buftype == 'quickfix'
-        end,
-      },
-    },
-    lualine_x = { search_result },
-    lualine_y = {
-      'diff',
-      'filetype'
-    },
-    lualine_z = { '%l:%c', '%p%%/%L' },
-  },
-  inactive_sections = {},
+      inactive_sections = {},
+    }
+  }
 }
