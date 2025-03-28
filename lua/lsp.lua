@@ -39,7 +39,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     ---[[Code required to activate autocompletion and trigger it on each keypress
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-    client.server_capabilities.completionProvider.triggerCharacters = vim.split("qwertyuiopasdfghjklzxcvbnm. ", "")
+    client.server_capabilities.completionProvider.triggerCharacters = vim.split(
+      "qwertyuiopasdfghjklzxcvbnm. ", ""
+    )
     vim.api.nvim_create_autocmd({ 'TextChangedI' }, {
       buffer = args.buf,
       callback = function()
@@ -56,7 +58,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
       callback = function()
         cancel_prev()
         local info = vim.fn.complete_info({ 'selected' })
-        local completionItem = vim.tbl_get(vim.v.completed_item, 'user_data', 'nvim', 'lsp', 'completion_item')
+        local completionItem = vim.tbl_get(
+          vim.v.completed_item, 'user_data', 'nvim', 'lsp', 'completion_item'
+        )
         if nil == completionItem then
           return
         end

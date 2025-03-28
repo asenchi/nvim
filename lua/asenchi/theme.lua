@@ -7,5 +7,5 @@ vim.cmd([[
   highlight Constant guifg=#999999
   highlight Normal ctermbg=none guibg=none
 ]])
-  -- set bg=dark
-  -- highlight NormalFloat guibg=#333333
+-- set bg=dark
+-- highlight NormalFloat guibg=#333333
