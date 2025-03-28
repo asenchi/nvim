@@ -1,8 +1,24 @@
 return {
   { "nvim-lua/plenary.nvim", name = "plenary" },
-  { 'ray-x/go.nvim', dependencies = { 'ray-x/guihua.lua' }, opts = {} },
+
+  {
+    "ray-x/go.nvim",
+    dependencies = {  -- optional packages
+      "ray-x/guihua.lua",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("go").setup()
+    end,
+    event = {"CmdlineEnter"},
+    ft = {"go", 'gomod'},
+    build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+  },
+
   { "NvChad/nvim-colorizer.lua", opts = {} },
+
   { "nvim-tree/nvim-web-devicons" },
+
   {
     "https://gitlab.com/yorickpeterse/nvim-window.git",
     opts ={
@@ -18,6 +34,8 @@ return {
       border = "single"
     }
   },
+
   { "habamax/vim-asciidoctor" },
+
   { "tpope/vim-fugitive", event = { "User InGitRepo" }, opts = {} },
 }
