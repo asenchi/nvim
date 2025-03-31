@@ -1,8 +1,24 @@
+-- This is copied straight from blink
+-- https://cmp.saghen.dev/installation#merging-lsp-capabilities
+local capabilities = {
+  textDocument = {
+    foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true,
+    },
+  },
+}
+
+capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 vim.lsp.config('*', {
+  capabilities = capabilities,
   root_markers = { ".git" },
 })
 
 vim.lsp.enable({
+  'html',
+  'json',
+  'cssls',
   'gopls',
   'terraformls',
   'tflint',
@@ -88,3 +104,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end
 })
 ---AUTOCOMPLETION SETUP END]])
+
+vim.keymap.set("n", "[d", function()
+	vim.diagnostic.jump({ count = -1, float = true })
+end, { desc = "Prev Diagnostic" })
+
+vim.keymap.set("n", "]d", function()
+	vim.diagnostic.jump({ count = 1, float = true })
+end, { desc = "Next Diagnostic" })
