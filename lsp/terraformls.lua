@@ -1,3 +1,3 @@
 return {
-  filetypes = { "tf" }
+  filetypes = { "tf", "hcl" }
 }
