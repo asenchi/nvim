@@ -5,6 +5,6 @@ require("asenchi.mappings")
 require("asenchi.theme")
 
 -- initialize lazy.nvim
-require("asenchi.init_lazy")
+require("asenchi.lazy")
 
 vim.loader.enable()
