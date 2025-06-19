@@ -80,11 +80,3 @@ local blink = function()
     end))
 end
 nmap('<leader>cb', blink)
-
-vim.keymap.set("n", "[d", function()
-	vim.diagnostic.jump({ count = -1, float = true })
-end, { desc = "Prev Diagnostic" })
-
-vim.keymap.set("n", "]d", function()
-	vim.diagnostic.jump({ count = 1, float = true })
-end, { desc = "Next Diagnostic" })
