@@ -1,9 +1,49 @@
 vim.api.nvim_create_autocmd('TextYankPost', {
-    desc = 'Highlight when yanking (copying) text',
-    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
     callback = function()
         vim.highlight.on_yank()
     end,
+})
+
+-- go to last loc when opening a buffer
+-- this mean that when you open a file, you will be at the last position
+vim.api.nvim_create_autocmd("BufReadPost", {
+    callback = function()
+        local mark = vim.api.nvim_buf_get_mark(0, '"')
+        local lcount = vim.api.nvim_buf_line_count(0)
+        if mark[1] > 0 and mark[1] <= lcount then
+            pcall(vim.api.nvim_win_set_cursor, 0, mark)
+        end
+    end,
+})
+
+-- show cursor line only in active window
+local cursorGrp = vim.api.nvim_create_augroup("CursorLine", { clear = true })
+vim.api.nvim_create_autocmd({ "InsertLeave", "WinEnter" }, {
+    pattern = "*",
+    command = "set cursorline",
+    group = cursorGrp,
+})
+vim.api.nvim_create_autocmd({ "InsertEnter", "WinLeave" }, {
+  pattern = "*", command = "set nocursorline", group = cursorGrp
+})
+
+-- Enable spell checking for certain file types
+-- { pattern = { "*.txt", "*.md" }, command = [[setlocal spell<cr> setlocal spelllang=en,de<cr>]] }
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = { "*.txt", "*.md" },
+    callback = function()
+        vim.opt.spell = true
+        vim.opt.spelllang = "en"
+    end,
+})
+
+-- fix terraform and hcl comment string
+vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("FixTerraformCommentString", { clear = true }),
+    callback = function(ev)
+        vim.bo[ev.buf].commentstring = "# %s"
+    end,
+    pattern = { "terraform", "hcl" },
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -16,14 +56,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
         -- defaults:
         -- https://neovim.io/doc/user/news-0.11.html#_defaults
 
-        map("gl", vim.diagnostic.open_float, "Open Diagnostic Float")
+        map("ll", vim.diagnostic.open_float, "Open Diagnostic Float")
         map("K", vim.lsp.buf.hover, "Hover Documentation")
         map("gs", vim.lsp.buf.signature_help, "Signature Documentation")
         map("gD", vim.lsp.buf.declaration, "Goto Declaration")
         map("<leader>la", vim.lsp.buf.code_action, "Code Action")
+        map("<leader>lA", vim.lsp.buf.range_code_action, "Range Code Action")
         map("<leader>lr", vim.lsp.buf.rename, "Rename all references")
         map("<leader>lf", vim.lsp.buf.format, "Format")
-        map("<leader>v", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>", "Goto Definition in Vertical Split")
+        map("<leader>lv", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>", "Goto Definition in Vertical Split")
+        map("<leader>Wa", vim.lsp.buf.add_workspace_folder, "Workspace Add Folder")
+        map("<leader>Wr", vim.lsp.buf.remove_workspace_folder, "Workspace Remove Folder")
 
         local function client_supports_method(client, method, bufnr)
             if vim.fn.has 'nvim-0.11' == 1 then
