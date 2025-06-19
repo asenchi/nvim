@@ -3,49 +3,54 @@ vim.diagnostic.config({
   virtual_lines = { current_line = true },
 })
 
--- looks cleaner to me
-local opt = vim.o
+vim.g.netrw_liststyle = 3
 
 -- settings
-opt.showmatch = true -- show matching brackets
-opt.synmaxcol = 300 -- stop syntax highlight after x lines for perf
-opt.laststatus = 2 -- always show status line
-opt.smartindent = true
-opt.autoindent = true
-opt.copyindent = true
-opt.autowrite = true -- write when switching buffers
-opt.autowriteall = true -- write on :quit
-opt.number = true
-opt.numberwidth = 4
-opt.formatoptions = 'tcqpronj'
-opt.wrap = true
-opt.textwidth = 0
-opt.title = true
-opt.list = true
-opt.clipboard = "unnamedplus"
-opt.history = 1000
-opt.swapfile = false
-opt.termguicolors = true
-opt.showbreak= '↪'
-opt.showcmd = true
-opt.spell = true
--- opt.syntax = true
-opt.timeoutlen = 300
-opt.timeout = true
-opt.winborder = 'rounded'
+vim.o.autoindent = true
+vim.o.autoread = true
+vim.o.autowrite = true -- write when switching buffers
+vim.o.autowriteall = true -- write on :quit
+vim.o.breakindent = true
+vim.o.clipboard = "unnamedplus"
+vim.o.copyindent = true
+vim.o.formatoptions = 'tcqpronj'
+vim.o.history = 1000
+vim.o.laststatus = 2 -- always show status line
+vim.o.list = true
+vim.o.number = true
+vim.o.numberwidth = 4
+vim.o.showbreak= '↪'
+vim.o.showcmd = true
+vim.o.showmatch = true -- show matching brackets
+vim.o.smartindent = true
+vim.o.spell = true
+vim.o.swapfile = false
+vim.o.synmaxcol = 300 -- stop syntax highlight after x lines for perf
+vim.o.termguicolors = true
+vim.o.textwidth = 0
+vim.o.timeoutlen = 300
+vim.o.title = true
+vim.o.wildignorecase = true
+vim.o.wrap = true
+vim.o.timeoutlen = 300
+vim.o.timeout = true
+vim.o.winborder = 'rounded'
 
-opt.completeopt = "menu,menuone,noinsert,preview,noselect"
+vim.o.completeopt = "menu,menuone,noinsert,preview,noselect"
 
 -- Buffers aren't destroyed (required for nvim-terminal)
-opt.hidden = true
+vim.o.hidden = true
 
 -- search
-opt.ignorecase = true -- case insensitive searching
-opt.smartcase = true -- case insensitive unless used in search
-opt.inccommand = "split"
+vim.o.ignorecase = true -- case insensitive searching
+vim.o.smartcase = true -- case insensitive unless used in search
+vim.o.inccommand = "split"
 
 -- I hate when things are hidden, so hard to understand their shape
-opt.conceallevel = 0
+vim.o.conceallevel = 0
+
+vim.opt.path:append("**")
+vim.opt.wildignore:append { "*/.git/*" }
 
 vim.cmd([[
   au FileType go setl sw=4 ts=4 et
