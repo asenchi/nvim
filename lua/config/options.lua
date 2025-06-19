@@ -1,3 +1,6 @@
+vim.g.mapleader = ','
+vim.g.maplocalleader = ','
+
 vim.diagnostic.config({
   virtual_text = { current_line = true },
   virtual_lines = { current_line = true },

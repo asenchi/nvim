@@ -48,6 +48,8 @@ nmap('<leader>bl', ':blast<CR>')
 
 map('<C-b>', ':NvimTreeToggle<CR>')
 
+vim.keymap.set('n', '<leader>d', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
 -- fzf-lua
 map('<leader>fb', ':lua require("fzf-lua").buffers()<CR>')
 map('<leader>ff', ':lua require("fzf-lua").files()<CR>')
@@ -62,8 +64,6 @@ map('<leader>K', ':retab<CR>')
 
 -- exit the terminal easily
 tmap('<Esc>', '<C-\\><C-n><CR>')
-
-map('<leader>$', ':luafile $MYVIMRC')
 
 -- Move to a window
 map('<leader>p', ':lua require("nvim-window").pick()<CR>')
@@ -80,3 +80,11 @@ local blink = function()
     end))
 end
 nmap('<leader>cb', blink)
+
+vim.keymap.set("n", "[d", function()
+	vim.diagnostic.jump({ count = -1, float = true })
+end, { desc = "Prev Diagnostic" })
+
+vim.keymap.set("n", "]d", function()
+	vim.diagnostic.jump({ count = 1, float = true })
+end, { desc = "Next Diagnostic" })
