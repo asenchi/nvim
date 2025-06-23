@@ -10,18 +10,6 @@ local function nmap(shortcut, command)
   keymap('n', shortcut, command)
 end
 
-local function imap(shortcut, command)
-  keymap('i', shortcut, command)
-end
-
-local function vmap(shortcut, command)
-  keymap('v', shortcut, command)
-end
-
-local function cmap(shortcut, command)
-  keymap('c', shortcut, command)
-end
-
 local function tmap(shortcut, command)
   keymap('t', shortcut, command)
 end
@@ -30,6 +18,8 @@ end
 map("<leader><space>", ":nohlsearch<CR>")
 map('<leader>q', ':close<CR>')
 nmap('<leader>xr', ":%s/<C-r><C-w>//g<Left><Left>")
+
+nmap('<leader>L', ":Lazy<CR>")
 
 -- someday figure this out in lua
 vim.cmd('map <leader>e  :e <C-R>=expand("%:p:h") . "/"<CR>')
