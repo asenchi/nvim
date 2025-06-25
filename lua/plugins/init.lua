@@ -10,17 +10,17 @@ return {
     config = function()
       require("go").setup()
     end,
-    event = {"CmdlineEnter"},
     ft = {"go", 'gomod'},
     build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
   },
 
-  { "NvChad/nvim-colorizer.lua", opts = {} },
+  { "NvChad/nvim-colorizer.lua", opts = {}, event = "VeryLazy" },
 
-  { "nvim-tree/nvim-web-devicons" },
+  { "nvim-tree/nvim-web-devicons", event = "VeryLazy" },
 
   {
     "https://gitlab.com/yorickpeterse/nvim-window.git",
+    event = "VeryLazy",
     opts ={
       -- The characters available for hinting windows.
       chars = {"a", "s", "f", "g", "h", "j", "k", "l"},
@@ -35,7 +35,7 @@ return {
     }
   },
 
-  { "habamax/vim-asciidoctor" },
+  { "habamax/vim-asciidoctor", ft = "asciidoc" },
 
   { "tpope/vim-fugitive", event = { "User InGitRepo" }, opts = {} },
 }

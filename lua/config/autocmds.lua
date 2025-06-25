@@ -46,6 +46,77 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = { "terraform", "hcl" },
 })
 
+-- Filetype-specific settings
+vim.api.nvim_create_autocmd("FileType", {
+    callback = function()
+        local ft = vim.bo.filetype
+        if ft == "go" then
+            vim.bo.shiftwidth = 4
+            vim.bo.tabstop = 4
+            vim.bo.expandtab = true
+        elseif ft == "markdown" then
+            vim.bo.textwidth = 79
+        elseif ft == "elixir" or ft == "sh" or ft == "hcl" or ft == "terraform" or ft == "lua" or ft == "toml" or ft == "css" or ft == "html" or ft == "json" then
+            vim.bo.shiftwidth = 2
+            vim.bo.tabstop = 2
+            vim.bo.expandtab = true
+            if ft == "hcl" or ft == "terraform" then
+                vim.bo.softtabstop = 2
+            end
+        end
+    end,
+})
+
+-- File detection autocmds
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    pattern = "*.hcl",
+    command = "set filetype=hcl",
+})
+
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    pattern = {"*.terraformrc", "terraform.rc"},
+    command = "set filetype=hcl",
+})
+
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    pattern = {"*.tf", "*.tfvars", "*.tfbackend"},
+    command = "set filetype=terraform",
+})
+
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    pattern = {"*.tfstate", "*.tfstate.backup"},
+    command = "set filetype=json",
+})
+
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    pattern = {"*.md", "*.markdown"},
+    callback = function()
+        vim.bo.filetype = "markdown"
+        vim.bo.syntax = "markdown"
+        vim.wo.conceallevel = 0
+    end,
+})
+
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    pattern = {"*.ex", "*.exs"},
+    callback = function()
+        vim.bo.filetype = "elixir"
+        vim.bo.syntax = "elixir"
+    end,
+})
+
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = "mix.lock",
+    command = "set filetype=elixir",
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.go",
+    callback = function()
+        require('go.format').gofmt()
+    end,
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
     callback = function(event)
