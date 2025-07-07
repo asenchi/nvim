@@ -61,11 +61,27 @@ map('<leader>s', ':split<CR>')
 
 local timer = vim.loop.new_timer()
 local blink = function()
+  if not timer then
+    timer = vim.loop.new_timer()
+  end
+  if timer then
     local cnt, blink_times = 0, 8
     timer:start(0, 100, vim.schedule_wrap(function()
         vim.cmd('set cursorcolumn! cursorline!')
         cnt = cnt + 1
-        if cnt == blink_times then timer:stop() end
+        if cnt == blink_times and timer then timer:stop() end
     end))
+  end
 end
 nmap('<leader>cb', blink)
+
+vim.keymap.set("n", "<space>c", function()
+  vim.ui.input({}, function(c)
+    if c and c~="" then
+      vim.cmd("noswapfile vnew")
+      vim.bo.buftype = "nofile"
+      vim.bo.bufhidden = "wipe"
+      vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.fn.systemlist(c))
+    end
+  end)
+end)
