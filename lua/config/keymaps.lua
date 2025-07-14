@@ -40,15 +40,6 @@ map('<C-b>', ':NvimTreeToggle<CR>')
 
 vim.keymap.set('n', '<leader>d', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
--- fzf-lua
-map('<leader>fb', ':lua require("fzf-lua").buffers()<CR>')
-map('<leader>ff', ':lua require("fzf-lua").files()<CR>')
-map('<leader>fg', ':lua require("fzf-lua").live_grep()<CR>')
-map('<leader>fh', ':lua require("fzf-lua").btags()<CR>')
-vim.keymap.set({ "n", "v", "i" }, "<leader>fc", function()
-  require("fzf-lua").complete_path()
-end)
-
 map('<leader>K', ':retab<CR>')
 
 -- exit the terminal easily

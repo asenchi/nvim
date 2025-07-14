@@ -1,35 +1,39 @@
 return {
   {
     "ibhagwan/fzf-lua",
-    -- optional for icon support
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    -- or if using mini.icons/mini.nvim
-    -- dependencies = { "echasnovski/mini.icons" },
+    -- dependencies = { "nvim-tree/nvim-web-devicons" },
+    cmd = "FzfLua",
+    keys = {
+      { "<leader>fg",  "<cmd>FzfLua live_grep_native<cr>",      desc = "Grep" },
+      { "<leader>fgc", "<cmd>FzfLua grep_cword<cr>",            desc = "Grep word under cursor" },
+      { "<leader>fgC", "<cmd>FzfLua grep_cword<cr>",            desc = "Grep WORD under cursor" },
+      { "<leader>ff",  "<cmd>FzfLua files<cr>",                 desc = "Find files" },
+      { "<leader>fb",   "<cmd>FzfLua buffers<cr>",              desc = "Find buffers" },
+      { "<leader>ss",  "<cmd>FzfLua spell_suggest<cr>",         desc = "Spell suggest" },
+      { "<leader>ft",  "<cmd>FzfLua filetypes<cr>",             desc = "Change file-types" },
+      { "<leader>km",  "<cmd>FzfLua keymaps<cr>",               desc = "View keymaps" },
+      { "<leader>ch",  "<cmd>FzfLua command_history<cr>",       desc = "Command history" },
+      { "<leader>sh",  "<cmd>FzfLua search_history<cr>",        desc = "Search history" },
+      { "<leader>ht",  "<cmd>FzfLua help_tags<cr>",             desc = "Help tags" },
+      { "<leader>hg",  "<cmd>FzfLua highlights<cr>",            desc = "Highlights" },
+      { "<leader>sc",  "<cmd>FzfLua git_bcommits<cr>",          desc = "Source control commits" },
+      { "<leader>ld",  "<cmd>FzfLua lsp_definitions<cr>",       desc = "LSP definitions" },
+      { "<leader>lr",  "<cmd>FzfLua lsp_references<cr>",        desc = "LSP references" },
+      { "<leader>li",  "<cmd>FzfLua lsp_implementations<cr>",   desc = "LSP implementations" },
+      { "<leader>ltd", "<cmd>FzfLua lsp_typedefs<cr>",          desc = "LSP type definitions" },
+      { "<leader>lds", "<cmd>FzfLua lsp_document_symbols<cr>",  desc = "LSP document symbols" },
+      { "<leader>lws", "<cmd>FzfLua lsp_workspace_symbols<cr>", desc = "LSP workspace symbols" },
+      { "<leader>ca",  "<cmd>FzfLua lsp_code_actions<cr>",      desc = "LSP code actions" },
+    },
     opts = {
       winopts = {
-        -- split = "belowright new",-- open in a split instead?
-                -- "belowright new"  : split below
-                -- "aboveleft new"   : split above
-                -- "belowright vnew" : split right
-                -- "aboveleft vnew   : split left
-        -- Only valid when using a float window
-        -- (i.e. when 'split' is not defined, default)
         height           = 0.90,            -- window height
         width            = 0.90,            -- window width
         row              = 0.35,            -- window row position (0=top, 1=bottom)
         col              = 0.50,            -- window col position (0=left, 1=right)
-        -- border argument passthrough to nvim_open_win()
         border           = "rounded",
-        -- Backdrop opacity, 0 is fully opaque, 100 is fully transparent (i.e. disabled)
         backdrop         = 60,
-        -- title         = "Title",
-        -- title_pos     = "center",        -- 'left', 'center' or 'right'
-        -- title_flags   = false,           -- uncomment to disable title flags
         fullscreen       = false,           -- start fullscreen?
-        -- enable treesitter highlighting for the main fzf window will only have
-        -- effect where grep like results are present, i.e. "file:line:col:text"
-        -- due to highlight color collisions will also override `fzf_colors`
-        -- set `fzf_colors=false` or `fzf_colors.hl=...` to override
         treesitter       = {
           enabled    = true,
           fzf_colors = { ["hl"] = "-1:reverse", ["hl+"] = "-1:reverse" }
