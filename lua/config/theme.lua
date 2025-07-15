@@ -5,7 +5,7 @@ vim.cmd.colorscheme("quiet")
 -- Custom highlights
 local highlights = {
   Keyword = { bold = true },
-  Comment = { italic = true },
+  Comment = { italic = true, fg = "#777777" },
   Constant = { fg = "#999999" },
   Normal = { bg = "none" },
   DiagnosticError = { fg = "red" },
