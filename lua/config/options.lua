@@ -15,9 +15,14 @@ vim.o.autowrite = true -- write when switching buffers
 vim.o.autowriteall = true -- write on :quit
 vim.o.breakindent = true
 vim.o.clipboard = "unnamedplus"
+vim.o.completeopt = "menu,menuone,noinsert,preview,noselect"
+vim.o.conceallevel = 0 -- I hate when things are hidden, so hard to understand their shape
 vim.o.copyindent = true
 vim.o.formatoptions = 'tcqpronj'
+vim.o.hidden = true -- Buffers aren't destroyed (required for nvim-terminal)
 vim.o.history = 1000
+vim.o.ignorecase = true -- case insensitive searching
+vim.o.inccommand = "split"
 vim.o.laststatus = 2 -- always show status line
 vim.o.list = true
 vim.o.number = true
@@ -25,36 +30,22 @@ vim.o.numberwidth = 4
 vim.o.showbreak= '↪'
 vim.o.showcmd = true
 vim.o.showmatch = true -- show matching brackets
+vim.o.smartcase = true -- case insensitive unless used in search
 vim.o.smartindent = true
 vim.o.spell = true
 vim.o.swapfile = false
 vim.o.synmaxcol = 300 -- stop syntax highlight after x lines for perf
 vim.o.termguicolors = true
 vim.o.textwidth = 0
+vim.o.timeout = true
 vim.o.timeoutlen = 300
 vim.o.title = true
 vim.o.wildignorecase = true
-vim.o.wrap = true
-vim.o.timeout = true
 vim.o.winborder = 'rounded'
-
-vim.o.completeopt = "menu,menuone,noinsert,preview,noselect"
-
--- Buffers aren't destroyed (required for nvim-terminal)
-vim.o.hidden = true
-
--- search
-vim.o.ignorecase = true -- case insensitive searching
-vim.o.smartcase = true -- case insensitive unless used in search
-vim.o.inccommand = "split"
-
--- I hate when things are hidden, so hard to understand their shape
-vim.o.conceallevel = 0
+vim.o.wrap = true
 
 vim.opt.path:append("**")
 vim.opt.wildignore:append { "*/.git/*" }
-
-
 
 vim.cmd([[
   hi ColorColumn guibg=#ABB2BF
