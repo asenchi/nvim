@@ -20,7 +20,7 @@ map("", '[t', ':tabp<CR>', opts)
 map("n", '<leader>bf', ':bfirst<CR>', opts)
 map("n", '<leader>bl', ':blast<CR>', opts)
 
--- map("", '<C-b>', ':NvimTreeToggle<CR>')
+map("", '<C-b>', ':NvimTreeToggle<CR>')
 
 map('n', '<leader>d', vim.diagnostic.setloclist, opts)
 
