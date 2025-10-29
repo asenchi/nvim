@@ -6,7 +6,6 @@ vim.lsp.enable({
   'terraformls',
   'tflint',
   'solargraph',
-  'elixirls',
   'lua_ls',
 })
 

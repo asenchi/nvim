@@ -5,18 +5,29 @@ return {
     build = ":TSUpdate",
 
     config = function()
-      require('nvim-treesitter').install({
-        'bash',
-        'c',
-        'javascript',
-        'lua', 'luadoc', 'luap',
-        'query',
-        'regex',
-        'vim', 'vimdoc',
-        'rust',
-        'json', 'yaml',
-        'go', 'gomod', 'gowork', 'gosum',
-        'zig',
+      require('nvim-treesitter').setup({
+        ensure_installed = {
+          'bash',
+          'c',
+          'lua', 'luadoc', 'luap',
+          'vim', 'vimdoc',
+          'json', 'yaml',
+          'go', 'gomod', 'gowork', 'gosum',
+          'zig',
+        },
+        auto_install = true,
+        highlight = {
+          enable = true,
+        },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = "gnn", -- set to `false` to disable one of the mappings
+            node_incremental = "grn",
+            scope_incremental = "grc",
+            node_decremental = "grm",
+          },
+        },
       })
     end
 }
