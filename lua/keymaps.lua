@@ -16,7 +16,7 @@ vim.keymap.set("n", ']t', ':tabn<CR>', { desc = "Tabs | next", silent = true })
 vim.keymap.set("n", '[t', ':tabp<CR>', { desc = "Tabs | prev", silent = true })
 
 -- open NvimTree
-vim.keymap.set("", '<C-b>', ':NvimTreeToggle<CR>', { desc = "General | Toggle tree", silent = true })
+vim.keymap.set("", '<leader>b', ':NvimTreeToggle<CR>', { desc = "General | Toggle tree", silent = true })
 
 -- toggle diagnostics
 vim.keymap.set('n', '<leader>d', vim.diagnostic.setloclist, { desc = "General | toggle diagnostics", silent = true })
