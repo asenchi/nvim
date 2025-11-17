@@ -1,13 +1,13 @@
-vim.lsp.enable({
-  'html',
-  'json',
-  'cssls',
-  'gopls',
-  'terraformls',
-  'tflint',
-  'solargraph',
-  'lua_ls',
-})
+-- vim.lsp.enable({
+--   'html',
+--   'json',
+--   'cssls',
+--   'gopls',
+--   'terraformls',
+--   'tflint',
+--   'solargraph',
+--   'lua_ls',
+-- })
 
 vim.diagnostic.config({
   virtual_lines = true,
