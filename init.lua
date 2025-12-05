@@ -1,7 +1,7 @@
 require("options")
 require("core.lazy")
 require("commands")
--- require("lsp")
+require("lsp")
 require("autocmds")
 require("keymaps")
 require("theme")
