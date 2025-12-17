@@ -67,7 +67,9 @@ vim.opt.wildignore:append { "*/.git/*" }
 vim.diagnostic.config({
   virtual_text = { current_line = true },
   virtual_lines = { current_line = true },
+  underline = { current_line = true },
 })
+
 
 vim.cmd([[
   hi ColorColumn guibg=#ABB2BF
