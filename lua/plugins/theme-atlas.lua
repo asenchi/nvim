@@ -1,3 +1,0 @@
-return {
-  "huyvohcmc/atlas.vim"
-}

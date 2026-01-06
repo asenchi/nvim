@@ -1,13 +1,8 @@
 -- Options
-
 local globals = {
-  mapleader = ",",
-  maplocalleader = ",",
+  mapleader = " ",
+  maplocalleader = " ",
   netrw_liststyle = 3,
-  -- used by to toggle diagnostics
-  diagnoistics_active = true,
-  terraform_fmt_on_save = 1,
-  terraform_align = 1,
 }
 
 local options = {
@@ -34,6 +29,7 @@ local options = {
   showbreak= '↪',
   showcmd = true,
   showmatch = true,
+  showmode = false,
   smartcase = true,
   smartindent = true,
   spell = true,
@@ -50,11 +46,6 @@ local options = {
   winborder = 'rounded',
   wrap = true,
   writebackup = false,
-
-  -- used for anuvyklack/windows.nvim
-  winwidth = 10,
-  winminwidth = 10,
-  equalalways = false,
 }
 
 -- load globals and options
@@ -64,19 +55,31 @@ for n,v in pairs(options) do vim.o[n] = v end
 vim.opt.path:append("**")
 vim.opt.wildignore:append { "*/.git/*" }
 
-vim.diagnostic.config({
-  virtual_text = { current_line = true },
-  virtual_lines = { current_line = true },
-  underline = { current_line = true },
-})
+local diagnostic_opts = {
+  -- Show signs on top of any other sign, but only for warnings and errors
+  signs = { priority = 9999, severity = { min = 'WARN', max = 'ERROR' } },
 
+  -- Show all diagnostics as underline (for their messages type `<Leader>ld`)
+  underline = { severity = { min = 'HINT', max = 'ERROR' } },
+
+  -- Show more details immediately for errors on the current line
+  virtual_lines = false,
+  virtual_text = {
+    current_line = true,
+    severity = { min = 'ERROR', max = 'ERROR' },
+  },
+
+  -- Don't update diagnostics when typing
+  update_in_insert = false,
+}
+
+MiniDeps.later(function() vim.diagnostic.config(diagnostic_opts) end)
 
 vim.cmd([[
-  hi ColorColumn guibg=#ABB2BF
+  "hi ColorColumn guibg=#ABB2BF
   augroup colorcol
     au!
     au InsertEnter * setlocal colorcolumn=80
     au InsertLeave * setlocal colorcolumn=0
   augroup END
 ]])
-
