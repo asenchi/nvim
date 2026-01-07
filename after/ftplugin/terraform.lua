@@ -5,7 +5,7 @@ vim.bo.commentstring = "# %s"
 vim.bo.tabstop = 2
 
 vim.g.terraform_exec_path = vim.g.terraform_exec_path or 'terraform'
-if vim.fn.executable(vim.g.terraform_binary_path) ~= 1 then
+if vim.fn.executable(vim.g.terraform_exec_path) ~= 1 then
   return
 end
 
