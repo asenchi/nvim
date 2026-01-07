@@ -138,6 +138,8 @@ nmap_leader('ls', '<Cmd>lua vim.lsp.buf.definition()<CR>',      'Source definiti
 nmap_leader('lt', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', 'Type definition')
 xmap_leader('lf', formatting_cmd, 'Format selection')
 
+nmap_leader('zh', '<Cmd>nohlsearch<CR>', 'Clear Search Highlight')
+
 -- t is for 'Terminal'
 nmap_leader('tT', '<Cmd>horizontal term<CR>', 'Terminal (horizontal)')
 nmap_leader('tt', '<Cmd>vertical term<CR>',   'Terminal (vertical)')
