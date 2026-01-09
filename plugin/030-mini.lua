@@ -78,7 +78,10 @@ end)
 
 later(function()
   -- Enable directory/file preview
-  require('mini.files').setup({ windows = { preview = true } })
+  require('mini.files').setup({
+    windows = { preview = true, width_preview = 100 },
+    options = { permanent_delete = false },
+  })
   -- Add common bookmarks for every explorer. Example usage inside explorer:
   -- - `'c` to navigate into your config directory
   -- - `g?` to see available bookmarks
