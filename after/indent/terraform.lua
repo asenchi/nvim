@@ -14,7 +14,7 @@ vim.b.undo_indent = "setlocal lisp< autoindent< shiftwidth< tabstop< softtabstop
 -- The indentation function
 _G.hcl_indent = function()
   local lnum = vim.v.lnum
-  
+
   -- Beginning of the file should have no indent
   if lnum <= 1 then
     return 0
@@ -25,7 +25,7 @@ _G.hcl_indent = function()
   if prevlnum == 0 then
     return 0
   end
-  
+
   local thisindent = vim.fn.indent(prevlnum)
   local prevline = vim.fn.getline(prevlnum)
   local thisline = vim.fn.getline(lnum)
