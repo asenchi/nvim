@@ -16,4 +16,3 @@ vim.filetype.add({
     ["terraform.rc"] = "hcl",
   },
 })
-

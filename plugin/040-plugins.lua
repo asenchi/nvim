@@ -21,6 +21,7 @@ now(function()
     'vimdoc',
     'markdown',
     -- mine
+    'hcl', 'terraform',
     'luadoc', 'luap',
     'bash',
     'json', 'yaml',
