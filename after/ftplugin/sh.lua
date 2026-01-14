@@ -12,7 +12,3 @@ vim.api.nvim_buf_set_keymap(
   ':silent !chmod +x %<CR>:echo "Made file executable"<CR>', -- The command to run
   { noremap = true, silent = true } -- Options
 )
-
--- Example of a buffer-local command (Run the current script in the terminal)
-vim.api.nvim_create_buf_cmd(0, "RunBashScript", ":terminal ./%", {nargs = 0})
--- You can now run :RunBashScript when editing a bash file
