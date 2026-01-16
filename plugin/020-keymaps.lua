@@ -3,7 +3,6 @@
 -- This is used to provide 'mini.clue' with extra clues.
 -- Add an entry if you create a new group.
 _G.Config.leader_group_clues = {
-    { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
     { mode = 'n', keys = '<Leader>e', desc = '+Explore' },
     { mode = 'n', keys = '<Leader>f', desc = '+Find' },
     { mode = 'n', keys = '<Leader>g', desc = '+Git' },

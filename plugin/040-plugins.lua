@@ -89,6 +89,7 @@ later(function()
   local nt_api = require('nvim-tree.api')
   nt_api.events.subscribe(nt_api.events.Event.TreeOpen, function()
     local tree_winid = nt_api.tree.winid()
+
     if tree_winid ~= nil then
       vim.api.nvim_set_option_value('statusline', '%t', {win = tree_winid})
     end
@@ -96,7 +97,7 @@ later(function()
 
   require('nvim-tree').setup({
     view = {
-      width = 40,
+      width = 30,
       adaptive_size = true,
       side = "left",
       preserve_window_proportions = true,
