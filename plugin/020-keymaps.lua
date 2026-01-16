@@ -4,7 +4,7 @@
 -- Add an entry if you create a new group.
 _G.Config.leader_group_clues = {
     { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
-    { mode = 'n', keys = '<Leader>e', desc = '+Explore/Edit' },
+    { mode = 'n', keys = '<Leader>e', desc = '+Explore' },
     { mode = 'n', keys = '<Leader>f', desc = '+Find' },
     { mode = 'n', keys = '<Leader>g', desc = '+Git' },
     { mode = 'n', keys = '<Leader>l', desc = '+Language' },
@@ -15,15 +15,7 @@ _G.Config.leader_group_clues = {
     { mode = 'x', keys = '<Leader>l', desc = '+Language' },
 }
 
-local edit_plugin_file = function(filename)
-    return string.format('<Cmd>edit %s/plugin/%s<CR>', vim.fn.stdpath('config'), filename)
-end
-
-local explore_at_file = '<Cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>'
-
-local new_scratch_buffer = function()
-    vim.api.nvim_win_set_buf(0, vim.api.nvim_create_buf(true,true))
-end
+local explore_at_file = ':e <C-R>=expand("%:p:h") . "/"<CR>'
 
 local explore_quickfix = function()
   for _, win_id in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
@@ -40,22 +32,10 @@ local xmap_leader = function(suffix, rhs, desc)
     vim.keymap.set('x', '<Leader>' .. suffix, rhs, { desc = desc })
 end
 
-nmap_leader('ba', '<Cmd>b#<CR>',                                 'Alternate')
-nmap_leader('bd', '<Cmd>lua MiniBufremove.delete()<CR>',         'Delete')
-nmap_leader('bD', '<Cmd>lua MiniBufremove.delete(0, true)<CR>',  'Delete!')
-nmap_leader('bs', new_scratch_buffer,                            'Scratch')
-nmap_leader('bw', '<Cmd>lua MiniBufremove.wipeout()<CR>',        'Wipeout')
-nmap_leader('bW', '<Cmd>lua MiniBufremove.wipeout(0, true)<CR>', 'Wipeout!')
-
 nmap_leader('ed', '<Cmd>lua MiniFiles.open()<CR>',          'Directory')
 nmap_leader('ee', '<Cmd>NvimTreeToggle<CR>',                'Tree Explorer')
 nmap_leader('ef', explore_at_file,                          'File directory')
-nmap_leader('ei', '<Cmd>edit $MYVIMRC<CR>',                 'init.lua')
-nmap_leader('ek', edit_plugin_file('020-keymaps.lua'),       'Keymaps config')
-nmap_leader('em', edit_plugin_file('030-mini.lua'),          'MINI config')
 nmap_leader('en', '<Cmd>lua MiniNotify.show_history()<CR>', 'Notifications')
-nmap_leader('eo', edit_plugin_file('010-options.lua'),       'Options config')
-nmap_leader('ep', edit_plugin_file('100_plugins.lua'),       'Plugins config')
 nmap_leader('eq', explore_quickfix,                         'Quickfix')
 
 -- f is for 'Fuzzy Find'. Common usage:
