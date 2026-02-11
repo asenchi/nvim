@@ -4,6 +4,7 @@ vim.filetype.add({
     tofu = "terraform",
     tfvars = "terraform",
     hcl = "hcl",
+    ["pkr.hcl"] = "packer",
     tfbackend = "hcl",
     tfstate = "json",
     ["tfstate.backup"] = "json",
