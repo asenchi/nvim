@@ -8,6 +8,7 @@ _G.Config.leader_group_clues = {
     { mode = 'n', keys = '<Leader>g', desc = '+Git' },
     { mode = 'n', keys = '<Leader>l', desc = '+Language' },
     { mode = 'n', keys = '<Leader>t', desc = '+Terminal' },
+    { mode = 'n', keys = '<Leader>a', desc = '+AI/Claude Code' },
     { mode = 'n', keys = '<Leader>z', desc = '+Other' },
 
     { mode = 'x', keys = '<Leader>g', desc = '+Git' },
@@ -120,3 +121,18 @@ nmap_leader('zh', '<Cmd>nohlsearch<CR>', 'Clear Search Highlight')
 -- t is for 'Terminal'
 nmap_leader('tT', '<Cmd>horizontal term<CR>', 'Terminal (horizontal)')
 nmap_leader('tt', '<Cmd>vertical term<CR>',   'Terminal (vertical)')
+
+-- a is for 'AI/Claude Code'
+nmap_leader('ac', '<Cmd>ClaudeCode<CR>',            'Toggle Claude')
+nmap_leader('af', '<Cmd>ClaudeCodeFocus<CR>',        'Focus Claude')
+nmap_leader('ar', '<Cmd>ClaudeCode --resume<CR>',    'Resume Claude')
+nmap_leader('aC', '<Cmd>ClaudeCode --continue<CR>',  'Continue Claude')
+nmap_leader('am', '<Cmd>ClaudeCodeSelectModel<CR>',  'Select Claude model')
+nmap_leader('ab', '<Cmd>ClaudeCodeAdd %<CR>',        'Add current buffer')
+nmap_leader('aa', '<Cmd>ClaudeCodeDiffAccept<CR>',   'Accept diff')
+nmap_leader('ad', '<Cmd>ClaudeCodeDiffDeny<CR>',     'Deny diff')
+xmap_leader('as', '<Cmd>ClaudeCodeSend<CR>',         'Send to Claude')
+
+_G.Config.new_autocmd('FileType', { 'NvimTree', 'neo-tree', 'oil', 'minifiles', 'netrw' }, function(ev)
+  vim.keymap.set('n', '<Leader>as', '<Cmd>ClaudeCodeTreeAdd<CR>', { buffer = ev.buf, desc = 'Add file' })
+end, 'Claude tree add')

@@ -109,3 +109,12 @@ later(function()
     },
   })
 end)
+
+-- plugin: claudecode
+later(function()
+  add({
+    source = 'coder/claudecode.nvim',
+    depends = { 'folke/snacks.nvim' },
+  })
+  require('claudecode').setup()
+end)
