@@ -73,7 +73,7 @@ local diagnostic_opts = {
   update_in_insert = false,
 }
 
-MiniDeps.later(function() vim.diagnostic.config(diagnostic_opts) end)
+Config.later(function() vim.diagnostic.config(diagnostic_opts) end)
 
 vim.cmd([[
   "hi ColorColumn guibg=#ABB2BF

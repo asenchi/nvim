@@ -1,4 +1,4 @@
-local now, later = MiniDeps.now, MiniDeps.later
+local now, later = Config.now, Config.later
 
 now(function()
   require('mini.basics').setup({
@@ -14,7 +14,7 @@ now(function()
 end)
 
 now(function() require('mini.notify').setup() end)
-now(function() require('mini.statusline').setup() end)
+--now(function() require('mini.statusline').setup() end)
 now(function() require('mini.tabline').setup() end)
 later(function() require('mini.extra').setup() end)
 later(function() require('mini.align').setup() end)
@@ -93,8 +93,8 @@ later(function()
   -- - `g?` to see available bookmarks
   local add_marks = function()
     MiniFiles.set_bookmark('c', vim.fn.stdpath('config'), { desc = 'Config' })
-    local minideps_plugins = vim.fn.stdpath('data') .. '/site/pack/deps/opt'
-    MiniFiles.set_bookmark('p', minideps_plugins, { desc = 'Plugins' })
+    local plugins_path = vim.fn.stdpath('data') .. '/site/pack'
+    MiniFiles.set_bookmark('p', plugins_path, { desc = 'Plugins' })
     MiniFiles.set_bookmark('w', vim.fn.getcwd, { desc = 'Working directory' })
   end
   _G.Config.new_autocmd('User', 'MiniFilesExplorerOpen', add_marks, 'Add bookmarks')
