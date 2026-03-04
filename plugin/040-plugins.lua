@@ -53,6 +53,7 @@ now(function()
     'gopls',
     'terraformls',
     'tflint',
+    'tinymist',
   })
 end)
 
