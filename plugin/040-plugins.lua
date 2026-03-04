@@ -81,6 +81,13 @@ later(function()
   Config.new_autocmd("BufWritePre", { "*.go" }, go_format_import, "Format on import")
 end)
 
+-- plugin: typst
+later(function()
+  add({
+    'https://github.com/kaarmu/typst.vim'
+  })
+end)
+
 -- plugin: nvim-tree
 later(function()
   add({
