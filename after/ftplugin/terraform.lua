@@ -20,7 +20,7 @@ local function terraform_fmt()
   -- Check if formatting is needed: 'w !terraform fmt -check -'
   -- We use vim.fn.system to run this silently and check the exit code
   vim.fn.system(terraform_bin .. " fmt -check -", vim.api.nvim_buf_get_lines(0, 0, -1, false))
-  
+
   -- If exit code is 0, no changes are needed
   if vim.v.shell_error == 0 then
     return
@@ -37,7 +37,7 @@ local function terraform_fmt()
   -- Prepare temporary file for stderr redirection
   local tmpfile = vim.fn.tempname()
   local shellredir_save = vim.o.shellredir
-  
+
   -- Set shellredir to capture stderr to the temp file
   vim.o.shellredir = ">%s 2>" .. tmpfile
 
@@ -52,7 +52,7 @@ local function terraform_fmt()
   if vim.v.shell_error ~= 0 then
     -- Undo the filter changes
     vim.cmd("silent undo")
-    
+
     -- Read and echo the error messages from the temp file
     local output = vim.fn.readfile(tmpfile)
     if #output > 0 then
