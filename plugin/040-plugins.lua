@@ -130,12 +130,6 @@ later(function()
 end)
 
 now(function()
-	add({
-		'https://github.com/OXY2DEV/markview.nvim',
-	})
-end)
-
-now(function()
   add({
     'https://github.com/nvim-tree/nvim-web-devicons',
     'https://github.com/nvim-lualine/lualine.nvim',
